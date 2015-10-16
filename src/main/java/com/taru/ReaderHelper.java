@@ -46,6 +46,7 @@ public class ReaderHelper {
           Transaction next2 = iterator2.next();
           total+= next2.getAmount();
         }
+        total = Math.round(total);
         System.out.println("The total for Date: " + key + " is: " + total + " in category: " + categoryName);
 
       }
@@ -111,7 +112,7 @@ public class ReaderHelper {
       List<Transaction> transactions = next.getValue();
       Map<String, List<Transaction>> monthsToTransactions = _categoryToMonths.get(categoryName);
       if(monthsToTransactions == null) {
-        monthsToTransactions = new HashMap<String, List<Transaction>>();
+        monthsToTransactions = new TreeMap<String, List<Transaction>>();
         _categoryToMonths.put(categoryName, monthsToTransactions);
       }
 

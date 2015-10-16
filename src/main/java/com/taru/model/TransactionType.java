@@ -1,4 +1,4 @@
-package com.taru.model;
+package com.taru .model;
 
 /**
  * Created by Shiran Maor on 10/10/2015.

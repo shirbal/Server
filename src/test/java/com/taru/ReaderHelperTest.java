@@ -13,8 +13,8 @@ public class ReaderHelperTest {
 	@Test
 	public void testCategoryDetailed() throws Exception {
 		ReaderHelper rd = transactionReader.readtFromAccount();
-		//rd.printTotals("Groceries");
-		rd.printDetailed("Groceries",true);
+		rd.printTotals("Groceries");
+		//rd.printDetailed("Groceries",true);
 	}
 	
 }

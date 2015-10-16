@@ -2,10 +2,10 @@ package com.taru.model;
 
 
 import com.taru.CategoryParser;
+import com.taru.TransactionDate;
 
 import java.util.*;
 
-import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
 public class Transaction {
 
   public static final String DATE_FORMAT = "dd-MMM-yy";
-  private String _transactionDate;
+  private TransactionDate _transactionDate;
   private double _amount;
   private String _category;
   private TransactionType _transactionType;
@@ -87,17 +87,17 @@ public class Transaction {
     DateFormat formatter =new SimpleDateFormat(DATE_FORMAT);
      try{
       Date timestamp = formatter.parse(date);
-      _transactionDate = getDateMonth(timestamp);
+      _transactionDate = new TransactionDate(timestamp);
     } catch (ParseException e) {
       e.printStackTrace();
     }
   }
 
-  public String getTransactionDate() {
+  public TransactionDate getTransactionDate() {
     return _transactionDate;
   }
 
-  public void setTransactionDate(String timestamp) {
+  public void setTransactionDate(TransactionDate timestamp) {
     _transactionDate = timestamp;
   }
 
@@ -126,15 +126,7 @@ public class Transaction {
   }
 
   public String getMonth() {
-	  String[] date = _transactionDate.split("/");
-	  return date[0] + "/" + date[2];
-  }
-  
-  public String getDateMonth(Date timestamp) {
-    int month = timestamp.getMonth() + 1;
-    int year = timestamp.getYear() + 1900;
-    int day = timestamp.getDate();
-    return month +"/"  + day + "/" + year;
+	  return _transactionDate.getDateRepresentation();
   }
   
 }

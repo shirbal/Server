@@ -47,6 +47,7 @@ public class TransactionReader {
           reader.add(dateStr, amountStr, categoryStr);
         }
       }
+      workbook.close();
       file.close();
       reader.mapToMonths();
 
