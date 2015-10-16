@@ -2,7 +2,6 @@ package com.taru.model;
 
 
 import com.taru.CategoryParser;
-import com.taru.TransactionDate;
 
 import java.util.*;
 
@@ -16,7 +15,8 @@ import java.text.SimpleDateFormat;
  */
 public class Transaction {
 
-  public static final String DATE_FORMAT = "dd-MMM-yy";
+  private static final String DATE_FORMAT = "dd-MMM-yy";
+  
   private TransactionDate _transactionDate;
   private double _amount;
   private String _category;

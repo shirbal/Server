@@ -18,16 +18,7 @@ public class MyController {
     public MyController() {
     	reader = transactionReader.readtFromAccount();	
     }
-	
-    
-	@RequestMapping("/data")
-	public MyObject getHello() {
-		MyObject obj = new MyObject();
-		obj.setId(12);
-		obj.setName("Shiran");
-		return obj;
-	}
-	
+		
 	@RequestMapping("/trans")
 	public Map<String,List<Transaction>> getTransactions() {
         Map<String,List<Transaction>> map = reader.getMap();
@@ -42,7 +33,7 @@ public class MyController {
         return map;
 	}
 	
-	@RequestMapping("/categ/{categoryName}")
+	@RequestMapping("/categ/{catgoryName}")
 	public Map<String, List<Transaction>> getByCategor(@PathVariable String categoryName) {
 		return reader.getCategoryByMonth(categoryName);
 	}
