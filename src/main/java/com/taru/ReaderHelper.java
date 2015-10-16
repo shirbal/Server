@@ -20,12 +20,15 @@ public class ReaderHelper {
 	  return _categoryToMonths;
   }
   
-  public void printTotals() {
+  public void printTotals(String categoryToPrint) {
     Set<Map.Entry<String, Map<String, List<Transaction>>>> entries = _categoryToMonths.entrySet();
     Iterator<Map.Entry<String, Map<String, List<Transaction>>>> iterator = entries.iterator();
     while(iterator.hasNext()) {
       Map.Entry<String, Map<String, List<Transaction>>> next = iterator.next();
       String categoryName = next.getKey();
+      if(!categoryName.equals(categoryToPrint)) {
+    	  continue;
+      }
       System.out.println();
       System.out.println("Showing totla for: " + categoryName);
       System.out.println("---------------------------------------");
@@ -36,7 +39,7 @@ public class ReaderHelper {
         Map.Entry<String, List<Transaction>> next1 = iterator1.next();
         String key = next1.getKey();
 
-        int total = 0;
+        double total = 0;
         List<Transaction> value1 = next1.getValue();
         Iterator<Transaction> iterator2 = value1.iterator();
         while(iterator2.hasNext()) {

@@ -78,7 +78,7 @@ public class CategoryOrg {
     }
 
     if(res == null) {
-      System.out.println("Other: " + in);
+      //System.out.println("Other: " + in);
       res = "Other";
     }
     return res;
