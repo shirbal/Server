@@ -5,26 +5,25 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.crsh.shell.impl.command.system.help;
 import org.junit.Test;
 
 import com.taru.model.Transaction;
+import com.taru.resthandlers.services.TransactionService;
 
 public class TransactionReaderTest {
 
 	@Test
 	public void testReadAll() throws Exception {
-		TransactionReader reader = new TransactionReader();
-		ReaderHelper rd =  reader.readtFromAccount();
-		Map<String, Map<String, List<Transaction>>> map = rd.getCategoryBytMonths();
+		TransactionService service = TransactionService.getInstance();
+		Map<String, Map<String, List<Transaction>>> map = service.getAllCategoryBytMonths();
 		Set<String> keys = map.keySet();
 		Iterator<String> interator = keys.iterator();
-		while(interator.hasNext()) {
+		while (interator.hasNext()) {
 			String next = interator.next();
-			rd.printTotals(next);
+			service.printTotals(next);
 			System.out.println("");
 		}
-		
+
 	}
-	
+
 }

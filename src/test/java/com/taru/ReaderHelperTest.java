@@ -2,18 +2,18 @@ package com.taru;
 
 import org.junit.Test;
 
+import com.taru.resthandlers.services.TransactionService;
+
 public class ReaderHelperTest {
-    private TransactionReader transactionReader = new TransactionReader();
+    private TransactionService service = TransactionService.getInstance();
 	@Test
 	public void testPrintTotals() throws Exception {
-		ReaderHelper rd = transactionReader.readtFromAccount();
-		rd.printTotals("Groceries");
+		service.printTotals("Groceries");
 	}
 	
 	@Test
 	public void testCategoryDetailed() throws Exception {
-		ReaderHelper rd = transactionReader.readtFromAccount();
-		rd.printTotals("Groceries");
+		service.printTotals("Groceries");
 		//rd.printDetailed("Groceries",true);
 	}
 	

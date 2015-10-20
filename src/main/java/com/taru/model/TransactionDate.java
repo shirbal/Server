@@ -5,13 +5,27 @@ import java.util.Date;
 
 public class TransactionDate implements Comparator<TransactionDate>{
 	
-	
+	private enum Week {SUN, MON , TUE, WED, THU, FRI,SAT }
 	private String _date;
+	private String debug;
 
+	@SuppressWarnings("deprecation")
 	public TransactionDate(Date date) {
 		_date = this.getDateMonth(date);
+		debug = fromIntToDayString( date.getDay());
 	}
 	
+	private String fromIntToDayString(int day) {
+		Week[] vals = Week.values();
+		return vals[day].toString();
+	}
+
+	public String getDebug() {
+		int month = getMonth();
+		int year = getYear();
+		int day = getDay();
+		return month + " / " + "(" + debug + ") " + day + " / " + year; 
+	}
 	
 	public String getDate() {
 		return _date;
@@ -32,13 +46,18 @@ public class TransactionDate implements Comparator<TransactionDate>{
 		return Integer.parseInt(date[0]);
     }
 	
+	private int getDay() {
+		String[] date = _date.split("/");
+		return Integer.parseInt(date[1]);
+	}
+	
 	public String getDateRepresentation() {
 		String[] date = _date.split("/");
 		return date[0] + "/" + date[2];
     }
   
 	@SuppressWarnings("deprecation")
-  	public String getDateMonth(Date timestamp) {
+  	private String getDateMonth(Date timestamp) {
 	  int month = timestamp.getMonth() + 1;
 	  int year = timestamp.getYear() + 1900;
 	  int day = timestamp.getDate();
