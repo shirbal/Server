@@ -11,29 +11,37 @@ import com.taru.utils.NumbersUtils;
 
 public class PinkiCenter {
 
-	public double getProjected(List<Pair<TransactionDate,Double>> values) {
+
+
+
+	public double getProjected(List<Pair<TransactionDate,Double>> values, int cleaningParam) {
 		double res = 0;
 		// Convert monthly total to per day each month amount
-		List<Integer> perDay = createListPerMonthlyDays(values);
+		List<Double> perDay = createListPerMonthlyDays(values);
 		// Clean list from irregular values
-		remove2SDFromList(perDay);
+		removeSDFromList(perDay,cleaningParam);
 		// get the forecast value
 		res = getForcastValue(perDay);
 		return res;
 	}
 
-	public double getForcastValue(List<Integer> perDay) {
+	public double getForcastValue(List<Double> perDay) {
 		double res;
 		// create table for projection
 		double[][] table = createAvrageTable(perDay);
 		// Calculate projected value
-		res = getMinMad(table);
+		//res = getMinMad(table);
+		res = getAvaregeUsingWeigth(table);
 		return res;
 	}
 
-	
-	private List<Integer> createListPerMonthlyDays(List<Pair<TransactionDate,Double>> values) {
-		List<Integer> perDay = new LinkedList<>();
+	private double getAvaregeUsingWeigth(double[][] table) {
+		return table[table.length-1][2];
+	}
+
+
+	private List<Double> createListPerMonthlyDays(List<Pair<TransactionDate,Double>> values) {
+		List<Double> perDay = new LinkedList<>();
 		Iterator<Pair<TransactionDate,Double>> iter = values.iterator();
 		while (iter.hasNext()) {
 			Pair<TransactionDate,Double> pair = iter.next();
@@ -41,8 +49,8 @@ public class PinkiCenter {
 			int year = pair.getFirst().getYear();
 			int daysPerMonth = DateUtils.getNumberOfDays(month, year);
 			double amountPerDay = pair.getSecond()/daysPerMonth;
-			amountPerDay = NumbersUtils.rount(amountPerDay, 2);
-			perDay.add(daysPerMonth);
+			amountPerDay = NumbersUtils.round(amountPerDay, 2);
+			perDay.add(amountPerDay);
 
 		}
 
@@ -50,20 +58,21 @@ public class PinkiCenter {
 
 	}
 
-	private void remove2SDFromList(List<Integer> values) {
+	private void removeSDFromList(List<Double> values, int count) {
 		double mean = NumbersUtils.mean(values);
 		double sd = NumbersUtils.SD(values, mean);
-		Iterator<Integer> iter = values.iterator();
+		sd = NumbersUtils.round(sd,1);
+		Iterator<Double> iter = values.iterator();
 		while (iter.hasNext()) {
-			Integer val = iter.next();
+			Double val = iter.next();
 
-			if (val < (mean + 2 * sd)) {
-				values.remove(val);
+			if ((val > (mean + count * sd)) || (val < (mean - count * sd))) {
+				iter.remove();
 			}
 		}
 	}
 
-	private double[][] createAvrageTable(List<Integer> months) {
+	private double[][] createAvrageTable(List<Double> months) {
 		if (months == null || months.size() < 4) {
 			return null;
 		}
@@ -97,7 +106,7 @@ public class PinkiCenter {
 		int j = 3;
 		for (int i = 0; i < 3; i++) {
 			double deviation = arr[j][0] - arr[j][index];
-			deviation = NumbersUtils.rount(deviation, 2);
+			deviation = NumbersUtils.round(deviation, 2);
 			double absDeviation = Math.abs(deviation);
 			sumDeviation += absDeviation;
 			j++;
