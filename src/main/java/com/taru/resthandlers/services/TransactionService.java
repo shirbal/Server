@@ -127,10 +127,10 @@ public class TransactionService {
 	}
 
 	private void init() {
-		_categoryToMonths = new HashMap<String, Map<String, List<Transaction>>>();
+		_categoryToMonths = new HashMap<>();
 		List<String[]> res = DataReader.readtFromAccount("c:\\temp\\transactions.xls");
 		Iterator<String[]> iter = res.iterator();
-		Map<String, List<Transaction>> map = new HashMap<String, List<Transaction>>();
+		Map<String, List<Transaction>> map = new HashMap<>();
 		while (iter.hasNext()) {
 
 			String[] element = iter.next();
@@ -143,7 +143,7 @@ public class TransactionService {
 	}
 
 	private void mapToMonths(Map<String, List<Transaction>> map) {
-		_categoryToMonths = new HashMap<String, Map<String, List<Transaction>>>();
+		_categoryToMonths = new HashMap<>();
 		Set<Map.Entry<String, List<Transaction>>> entries = map.entrySet();
 		Iterator<Map.Entry<String, List<Transaction>>> iterator = entries.iterator();
 		while (iterator.hasNext()) {
@@ -155,7 +155,7 @@ public class TransactionService {
 			List<Transaction> transactions = next.getValue();
 			Map<String, List<Transaction>> monthsToTransactions = _categoryToMonths.get(categoryName);
 			if (monthsToTransactions == null) {
-				monthsToTransactions = new TreeMap<String, List<Transaction>>();
+				monthsToTransactions = new TreeMap<>();
 				_categoryToMonths.put(categoryName, monthsToTransactions);
 			}
 
@@ -168,7 +168,7 @@ public class TransactionService {
 				}
 				List<Transaction> transactionsToMonth = monthsToTransactions.get(current);
 				if (transactionsToMonth == null) {
-					transactionsToMonth = new ArrayList<Transaction>();
+					transactionsToMonth = new ArrayList<>();
 					monthsToTransactions.put(current, transactionsToMonth);
 				}
 				transactionsToMonth.add(transaction);
@@ -183,14 +183,11 @@ public class TransactionService {
 			double parsedAmount = parseAmount(amount);
 			TransactionCategory categoryParsed = parseCategory(category);
 			if (categoryParsed.getCategory() != null) {
-				if(categoryParsed.getCategory().equals("Groceries")) {
-					System.out.println(date.getDebug());
-				}
 				Transaction transaction = new Transaction(date, parsedAmount, categoryParsed);
 				String parsedCategory = transaction.getCategory();
 				List<Transaction> list = map.get(parsedCategory);
 				if (list == null) {
-					list = new LinkedList<Transaction>();
+					list = new LinkedList<>();
 					map.put(parsedCategory, list);
 				}
 				list.add(transaction);

@@ -2,14 +2,13 @@ package com.taru.pinki;
 
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import com.taru.parsers.DateParser;
 import org.junit.Test;
 
 import com.taru.model.TransactionDate;
-import com.taru.pinki.models.Pair;
+import com.taru.model.Pair;
 
 
 public class PinkiCenterTest {

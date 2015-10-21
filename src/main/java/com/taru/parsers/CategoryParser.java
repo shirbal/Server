@@ -15,7 +15,6 @@ public class CategoryParser {
 		return _instance;
 	}
 
-
   public String parseVisaDebit(String category) {
     category = clearDoubleSpaces(category);
     String[] splits = category.split(" ");
@@ -48,11 +47,6 @@ public class CategoryParser {
     substring = CategoryMapper.getCategory(substring);
     return substring;
   }
-
-
-
-
-
 
   public String clearDoubleSpaces(String str) {
     while(str.contains("  ")) {

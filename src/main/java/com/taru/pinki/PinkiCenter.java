@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.taru.model.TransactionDate;
-import com.taru.pinki.models.Pair;
+import com.taru.model.Pair;
 import com.taru.utils.DateUtils;
 import com.taru.utils.NumbersUtils;
 
@@ -35,7 +35,6 @@ public class PinkiCenter {
 	private double getAvaregeUsingWeigth(double[][] table) {
 		return table[table.length-1][2];
 	}
-
 
 	private List<Double> createListPerMonthlyDays(List<Pair<TransactionDate,Double>> values) {
 		List<Double> perDay = new LinkedList<>();

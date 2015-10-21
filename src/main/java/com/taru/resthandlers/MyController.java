@@ -12,10 +12,9 @@ import com.taru.resthandlers.services.TransactionService;
 
 @RestController
 public class MyController {
-    private TransactionService service = TransactionService.getInstance();
-    
-    
 
+	private TransactionService service = TransactionService.getInstance();
+    
 	@RequestMapping("/months")
 	public Map<String, Map<String, List<Transaction>>> getTransactionsByMonths() {
         Map<String, Map<String, List<Transaction>>> map = service.getAllCategoryBytMonths();

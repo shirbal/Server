@@ -1,4 +1,4 @@
-package com.taru.pinki.models;
+package com.taru.model;
 
 public class Pair<T1, T2> {
 	

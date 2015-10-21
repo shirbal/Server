@@ -62,7 +62,7 @@ public class TransactionCategory {
 	}
 
 	/**
-	 * @param _category
+	 * @param category
 	 *            the _category to set
 	 */
 	public void setCategory(String category) {

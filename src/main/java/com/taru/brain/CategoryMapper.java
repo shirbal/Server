@@ -25,8 +25,6 @@ public class CategoryMapper {
     _known.put("SOCCER", "Entertainment");
     _known.put("ART", "Entertainment");
     _known.put("YANKEE", "Entertainment");
-    
-    
     _known.put("KOSHER", "Food");
     _known.put("YOGURT", "Food");
     _known.put("FOOD", "Food");
@@ -52,11 +50,8 @@ public class CategoryMapper {
     _known.put("SHELL", "Transportation");
     _known.put("TOYOTA", "Transportation");
     _known.put("OIL", "Transportation");
-    
-    
     _known.put("TARGET", "Miscel");
     _known.put("CLEANERS", "Miscel");
-    
     _known.put("EZPASS", "Transportation");
     _known.put("VALET", "Transportation");
     _known.put("GAS", "Transportation");
@@ -77,9 +72,7 @@ public class CategoryMapper {
     _known.put("CVS", "Pharmacy");
     _known.put("H&M", "Cloths");
     _known.put("SHOES", "Cloths");
-    
     _known.put("SPORTS AUTHORI", "Cloths");
-    
     _known.put("WALGREENS", "Pharmacy");
     _known.put("SUPERMKTS", "Groceries");
     _known.put("FARMERS", "Groceries");
