@@ -11,9 +11,6 @@ import com.taru.utils.NumbersUtils;
 
 public class PinkiCenter {
 
-
-
-
 	public double getProjected(List<Pair<TransactionDate,Double>> values, int cleaningParam) {
 		double res = 0;
 		// Convert monthly total to per day each month amount
