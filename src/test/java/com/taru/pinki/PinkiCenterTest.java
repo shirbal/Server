@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.taru.parsers.DateParser;
 import org.junit.Test;
 
 import com.taru.model.TransactionDate;
@@ -18,21 +19,21 @@ public class PinkiCenterTest {
 	@Test
 	public void testCreateAvrageTable() throws Exception {
 		List<Pair<TransactionDate,Double>> list = new ArrayList<Pair<TransactionDate, Double>>();
-		add(list, 3, 741);
-		add(list, 4, 1448);
-		add(list, 5, 1706);
-		add(list, 6, 2031);
-		add(list, 7, 1911);
-		add(list, 8, 1113);
+		add(list, "01-MAR-2015", 741);
+		add(list, "01-APR-2015", 1448);
+		add(list, "01-MAY-2015", 1706);
+		add(list, "01-JUN-2015", 2031);
+		add(list, "01-JUL-2015", 1911);
+		add(list, "01-AUG-2015", 1113);
 		
-		service.getProjected(list);
+		service.getProjected(list,2);
 		
 	
 	}
 
-	private void add(List<Pair<TransactionDate, Double>> list, int month, double amount) {
+	private void add(List<Pair<TransactionDate, Double>> list, String dateStr, double amount) {
 		@SuppressWarnings("deprecation")
-		TransactionDate date = new TransactionDate(new Date(2015,month,1));
+		TransactionDate date = DateParser.parseTimestamp(dateStr);
 		list.add(new Pair<TransactionDate,Double>(date,amount));
 	}
 }

@@ -8,7 +8,7 @@ public class DateUtils {
 		int res = 0;
 		Calendar calendar = Calendar.getInstance();
 		calendar.set(Calendar.YEAR, year);
-		calendar.set(Calendar.MONTH, month);
+		calendar.set(Calendar.MONTH, month-1);
 		res = calendar.getActualMaximum(Calendar.DATE);
 		return res;
 	}

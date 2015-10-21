@@ -10,7 +10,7 @@ public class NumbersUtils {
 
 	
 
-	public static double rount(double num, int digits) {
+	public static double round(double num, int digits) {
 		StringBuilder str = new StringBuilder("#");
 		if(digits > 0) {
 			str.append(".");
@@ -30,11 +30,11 @@ public class NumbersUtils {
 
 	}
 	
-	public static double mean(List<Integer> values) {
+	public static double mean(List<Double> values) {
 		double mean = 0;
-		Iterator<Integer> iter = values.iterator();
+		Iterator<Double> iter = values.iterator();
 		while(iter.hasNext()) {
-			Integer next = iter.next();
+			Double next = iter.next();
 			mean+=next;
 			
 		}
@@ -42,7 +42,7 @@ public class NumbersUtils {
 		return mean;
 	}
 	
-	public static double SD(List<Integer> values, double mean) {
+	public static double SD(List<Double> values, double mean) {
 		double res = 0;
 		int sum = 0;
 		for(int i = 0; i<values.size(); i++) {
