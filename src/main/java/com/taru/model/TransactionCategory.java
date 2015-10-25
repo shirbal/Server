@@ -1,5 +1,6 @@
 package com.taru.model;
 
+import com.taru.brain.CategoryMapper;
 import com.taru.parsers.CategoryParser;
 
 public class TransactionCategory {
@@ -7,12 +8,42 @@ public class TransactionCategory {
 	private String _category;
 	private TransactionType _transactionType;
 
+	public TransactionCategory(String categoryName, Bank bank) {
+		switch (bank) {
+			case BOFA:
+				parseCategoryGeneral(categoryName);
+				break;
+			case LEUMI_USA:
+				parseCategory(categoryName);
+				break;
+		}
+
+	}
+
+	private void parseCategoryGeneral(String categoryName) {
+		categoryName = categoryName.toLowerCase();
+		if (categoryName.contains("ATM".toLowerCase()) || categoryName.contains("WITHDRWL".toLowerCase())) {
+			_transactionType = TransactionType.OUT;
+			_category = "ATM";
+		}  else if ( categoryName.contains("DEPOSIT".toLowerCase())) {
+			_transactionType = TransactionType.IN;
+			_category = "Income Funds";
+		}  else if(categoryName.contains("DIRECT DEP".toLowerCase())) {
+			_transactionType = TransactionType.IN;
+			_category = "Payroll";
+		} else {
+			_category = CategoryMapper.getCategory(categoryName);
+		}
+
+	}
+
 	public TransactionCategory(String categoryName) {
 		parseCategory(categoryName);
 	}
 
+
 	private void parseCategory(String category) {
-		if (category.contains("VISA DEBIT")) {
+		if (category.contains("VISA DEBIT") || category.contains("CHECKCARD")) {
 			_transactionType = TransactionType.OUT;
 			parseDebit(category);
 		} else if (category.contains("ACH DEBIT")) {

@@ -3,8 +3,11 @@ package com.taru.pinki;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import com.taru.model.Transaction;
 import com.taru.parsers.DateParser;
+import com.taru.resthandlers.services.TransactionService;
 import org.junit.Test;
 
 import com.taru.model.TransactionDate;
@@ -35,4 +38,14 @@ public class PinkiCenterTest {
 		TransactionDate date = DateParser.parseTimestamp(dateStr);
 		list.add(new Pair<TransactionDate,Double>(date,amount));
 	}
+
+	@Test
+	public void testGenerateWeeks() throws Exception {
+		TransactionService service = TransactionService.getInstance();
+		List<Transaction> groceries = service.getTransactionByMonthAsList("Groceries");
+
+		PinkiCenter center = new PinkiCenter();
+		center.generateWeeksTable(groceries,4);
+	}
+
 }

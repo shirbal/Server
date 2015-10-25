@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class DataReader {
 
-	public static List<String[]> readtFromAccount(String path) {
+	public static List<String[]> readtFromLeumiAccount(String path) {
 
 		List<String[]> data = new LinkedList<>();
 		try {
@@ -60,5 +60,50 @@ public class DataReader {
 		}
 		return data;
 	}
+
+	public static List<String[]> readtFromBOFAAccount(String path) {
+
+		List<String[]> data = new LinkedList<>();
+		try {
+
+			FileInputStream file = new FileInputStream(path);
+
+			// Create Workbook instance holding reference to .xlsx file
+			HSSFWorkbook workbook = new HSSFWorkbook(file);
+
+			// Get first/desired sheet from the workbook
+			HSSFSheet sheet = workbook.getSheetAt(0);
+
+			// Iterate through each rows one by one
+			//Iterator<Row> rowIterator = sheet.iterator();
+			//while (rowIterator.hasNext()) {
+			for(int i = 8; i <= sheet.getLastRowNum(); i++) {
+
+				Row row = sheet.getRow(i);
+				// For each row, iterate through all the columns
+				Cell date = row.getCell(0);
+				Cell category = row.getCell(1);
+				Cell amount = row.getCell(2);
+				String dateStr = date.toString();
+				String amountStr = amount.toString();
+				String categoryStr = null;
+				if (category != null) {
+					categoryStr = category.toString();
+				}
+				if (category != null) {
+					String element[] = { dateStr, amountStr, categoryStr };
+					data.add(element);
+
+				}
+			}
+			workbook.close();
+			file.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return data;
+	}
+
 
 }

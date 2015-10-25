@@ -20,7 +20,7 @@ public class TransactionReaderTest {
 		Iterator<String> interator = keys.iterator();
 		while (interator.hasNext()) {
 			String next = interator.next();
-			service.printTotals(next);
+			//service.printTotals(next);
 			System.out.println("");
 		}
 

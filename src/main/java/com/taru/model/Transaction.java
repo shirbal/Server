@@ -13,6 +13,16 @@ public class Transaction {
 		_transactionCategory = category;
 		_transactionDate = transasction;
 		_amount = amount;
+		fixAmountAndTransactionType();
+	}
+
+	private void fixAmountAndTransactionType() {
+		if(_amount < 0) {
+			this._transactionCategory.setTransactionType(TransactionType.OUT);
+			_amount = Math.abs(_amount);
+		} else {
+			this._transactionCategory.setTransactionType(TransactionType.IN);
+		}
 	}
 
 	public TransactionDate getTransactionDate() {

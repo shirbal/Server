@@ -8,12 +8,12 @@ public class ReaderHelperTest {
     private TransactionService service = TransactionService.getInstance();
 	@Test
 	public void testPrintTotals() throws Exception {
-		service.printTotals("Groceries");
+		//service.printTotals("Food");
 	}
 	
 	@Test
 	public void testCategoryDetailed() throws Exception {
-		service.printTotals("Groceries");
+		//service.printTotals("Groceries");
 		//rd.printDetailed("Groceries",true);
 	}
 	

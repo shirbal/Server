@@ -3,6 +3,7 @@ package com.taru.resthandlers;
 import java.util.List;
 import java.util.Map;
 
+import com.taru.io.PrinterHelper;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,7 +30,8 @@ public class MyController {
 	
 	@RequestMapping("/catstr/{categoryName}")
 	public String getByCategorStr(@PathVariable String categoryName) {
-		return service.printDetailed(categoryName,true);
+		Map<String, Map<String, List<Transaction>>> categoryToMonths = service.getCategoryToMonths();
+		return PrinterHelper.printDetailed(categoryName,categoryToMonths,true);
 	}
 	
 }

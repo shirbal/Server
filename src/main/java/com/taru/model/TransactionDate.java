@@ -35,7 +35,6 @@ public class TransactionDate implements Comparator<TransactionDate>{
 		this._date = date;
 	}
 	
-	
 	public int getYear() {
 		String[] date = _date.split("/");
 		return Integer.parseInt(date[2]);
@@ -46,7 +45,7 @@ public class TransactionDate implements Comparator<TransactionDate>{
 		return Integer.parseInt(date[0]);
     }
 	
-	private int getDay() {
+	public int getDay() {
 		String[] date = _date.split("/");
 		return Integer.parseInt(date[1]);
 	}
@@ -92,7 +91,5 @@ public class TransactionDate implements Comparator<TransactionDate>{
 	public String toString() {
 		return _date;
 	}
-	
-	
 
 }
