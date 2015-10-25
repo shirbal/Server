@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76fed5eb-7a45-4fe1-82f3-e9712d4a006f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/pinki/PinkiCenter.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/pinki/PinkiCenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/taru/pinki/PinkiCenterTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/taru/pinki/PinkiCenterTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="76fed5eb-7a45-4fe1-82f3-e9712d4a006f" name="Default" comment="" />
     <ignored path="Server.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -860,7 +856,7 @@
       <workItem from="1445385553696" duration="5463000" />
       <workItem from="1445482627802" duration="755000" />
       <workItem from="1445564446924" duration="10137000" />
-      <workItem from="1445709585734" duration="29588000" />
+      <workItem from="1445709585734" duration="30064000" />
     </task>
     <task id="LOCAL-00001" summary="Moving jars to lib folder">
       <created>1445395819768</created>
@@ -878,10 +874,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45943000" />
+    <option name="totallyTimeSpent" value="46419000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47960618" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
