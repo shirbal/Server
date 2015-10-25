@@ -1,8 +1,6 @@
 package com.taru.pinki;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 import com.taru.model.Transaction;
 import com.taru.model.TransactionDate;
@@ -15,7 +13,7 @@ public class PinkiCenter {
   public static final int NUMBER_OF_DAYS_INT_WEEK = 7;
   public static final double DOUBLE_ZERO = 0.0;
   public static final int WEEK_TOTAL_INDEX = 7;
-  public static final int CICLE_TOTAL_INDEX = 8;
+  public static final int CYCLE_TOTAL_INDEX = 8;
   public static final int WEEK_TOTAL_PERCENTAGE_INDEX = 9;
   public static final int WEEK_LAST_INDEX = 6;
 
@@ -31,7 +29,6 @@ public class PinkiCenter {
   }
 
   /**
-   *
    * @param perDay
    * @return
    */
@@ -43,6 +40,181 @@ public class PinkiCenter {
     //res = getMinMad(table);
     res = getAvaregeUsingWeigth(table);
     return res;
+  }
+
+  public void createWeeklyProjected(List<Transaction> transactions, int numberOfWeeksInCycle) {
+    // Fill table with transactions and weekly totals
+    List<Double[]> weeksTable = generateWeeksTable(transactions, numberOfWeeksInCycle);
+    // Fix weekly totals which are out of range
+    fixAnormalWeeks(weeksTable, numberOfWeeksInCycle);
+    // Calculate cycle totals and weekly percentage per cycle
+    int startIndex = calculateCycleTotalsAndPercentages(weeksTable, numberOfWeeksInCycle);
+
+    // create weekly percentage table
+
+    // calculate projected weeks (how much to produce) with percentage
+
+  }
+
+  /**
+   * Function which generates table of weeks (sunday till sunday)
+   * with days of transactions, total for each week, and total for each 4 months
+   *
+   * @param transactions
+   * @return
+   */
+  public List<Double[]> generateWeeksTable(List<Transaction> transactions, int numberOfWeeksInCicle) {
+
+    List<Double[]> weeks = new LinkedList<>();
+
+    int weekNumber = 0;
+    int startDayOfWeek = 0;
+    TransactionDate startDate;
+
+    double totalWeek = 0;
+
+    Transaction firstTransaction = transactions.get(0);
+    startDayOfWeek = DateUtils.dayOfWeek(firstTransaction.getTransactionDate());
+    startDate = firstTransaction.getTransactionDate();
+    Iterator<Transaction> iterator = transactions.iterator();
+    while (iterator.hasNext()) {
+      Transaction transaction = iterator.next();
+      Double[] transactionsForWeek;
+
+      int dayOfWeek = DateUtils.dayOfWeek(transaction.getTransactionDate());
+      int intervalToNextDay = DateUtils.dayBetween(startDate, transaction.getTransactionDate());
+
+      if (startDayOfWeek + intervalToNextDay < WEEK_LAST_INDEX) { // same week
+        transactionsForWeek = getWeek(weeks, weekNumber);
+      } else { // start new week
+        // update new start day
+        startDayOfWeek = dayOfWeek;
+        startDate = transaction.getTransactionDate();
+        transactionsForWeek = weeks.get(weekNumber);
+        // update total week
+        totalWeek = NumbersUtils.round(totalWeek, 2);
+        transactionsForWeek[WEEK_TOTAL_INDEX] = totalWeek;
+        totalWeek = 0;
+
+        // check if needs to add empty weeks
+        intervalToNextDay = intervalToNextDay - (WEEK_LAST_INDEX - startDayOfWeek) - dayOfWeek;
+
+        int numberOfEmtyWeeksToAdd = intervalToNextDay / NUMBER_OF_DAYS_INT_WEEK;
+        if (intervalToNextDay > 0) {
+          addEmptyWeeks(weeks, weekNumber, numberOfEmtyWeeksToAdd);
+        }
+        weekNumber += numberOfEmtyWeeksToAdd + 1;
+        transactionsForWeek = getWeek(weeks, weekNumber);
+      }
+
+      // if amount is not initialized then do so
+      if (transactionsForWeek[dayOfWeek] == null) {
+        transactionsForWeek[dayOfWeek] = DOUBLE_ZERO;
+      }
+      // add amount to day
+      transactionsForWeek[dayOfWeek] += transaction.getAmount();
+      // add amount to total week calculation
+      totalWeek += transaction.getAmount();
+
+    }
+
+    Double[] lastWeek = weeks.get(weekNumber);
+    // update total week
+    lastWeek[WEEK_TOTAL_INDEX] = totalWeek;
+
+    return weeks;
+
+  }
+
+  public int calculateCycleTotalsAndPercentages(List<Double[]> weeks, int numberOfWeeksInCycle) {
+    int firstIndex = 0;
+    boolean stop = false;
+
+    for (int j = weeks.size() - 1; j >= 0; j--) { // iterate over the cycles
+      double totalCycle = 0;
+      // calculate the total for each cycle
+      for (int i = 0; i < numberOfWeeksInCycle; i++) {
+        if (j - i < 0) { // we are out of bounce, need to ignore this weeks
+          stop = true;
+          break;
+        }
+        Double[] week = weeks.get(j - i);
+        totalCycle += week[WEEK_TOTAL_INDEX];
+      }
+      if (stop) {
+        break;
+      }
+      Double[] lastWeekOfCycle = weeks.get(j);
+      lastWeekOfCycle[CYCLE_TOTAL_INDEX] = totalCycle;
+      // for each element in this cycle, calculate its percentage
+      for (int i = 0; i < numberOfWeeksInCycle; i++) {
+        if (j - i < 0) { // we are out of bounce, need to ignore this weeks
+          stop = true;
+          break;
+        }
+        Double[] week = weeks.get(j - i);
+        week[WEEK_TOTAL_PERCENTAGE_INDEX] = NumbersUtils.round(week[WEEK_TOTAL_INDEX] / totalCycle, 2);
+      }
+      if (stop) {
+        break;
+      }
+      j = j - numberOfWeeksInCycle + 1; // plus 1 because than we do j-- again
+      firstIndex = j;
+    }
+
+    return firstIndex;
+  }
+
+  public void fixAnormalWeeks(List<Double[]> weeks, int numberOfWeeksInCycle) {
+    for (int i = 0; i < numberOfWeeksInCycle; i++) {
+      List<Double> values = getWeekiValues(weeks, i, numberOfWeeksInCycle);
+      double mean = NumbersUtils.mean(values);
+      double sd = NumbersUtils.SD(values, mean);
+      int j = i;
+      Iterator<Double> iterator = values.iterator();
+      while (iterator.hasNext()) {
+        Double next = iterator.next();
+        Double[] transactions = weeks.get(j);
+        if (next > (mean + 2 * sd)) {
+          transactions[WEEK_TOTAL_INDEX] = mean + 2 * sd;
+        } else if (next < (mean - 2 * sd)) {
+          transactions[WEEK_TOTAL_INDEX] = mean - 2 * sd;
+        }
+        j += 4;
+      }
+    }
+  }
+
+  private List<Double> getWeekiValues(List<Double[]> weeks, int startIndex, int numberOfWeeksInCycle) {
+    List<Double> result = new LinkedList<>();
+    try {
+      while (startIndex < weeks.size()) {
+        Double[] week = weeks.get(startIndex);
+        result.add(week[WEEK_TOTAL_INDEX]);
+        startIndex += numberOfWeeksInCycle;
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return result;
+  }
+
+  private void addEmptyWeeks(List<Double[]> weeks, int weekNumber, int numberOfEmptyWeeksToAdd) {
+    int iterateIndex = weekNumber + 1;
+    for (int i = 0; i < numberOfEmptyWeeksToAdd; i++) {
+      weeks.add(iterateIndex, new Double[NUMBER_OF_DAYS_INT_WEEK + 3]);
+    }
+  }
+
+  private Double[] getWeek(List<Double[]> weeks, int weekNumber) {
+    Double[] transactionsForWeek;
+    if (weeks.size() <= weekNumber) {
+      transactionsForWeek = new Double[NUMBER_OF_DAYS_INT_WEEK + 3];
+      weeks.add(weekNumber, transactionsForWeek);
+    } else {
+      transactionsForWeek = weeks.get(weekNumber);
+    }
+    return transactionsForWeek;
   }
 
   private double getAvaregeUsingWeigth(double[][] table) {
@@ -129,113 +301,5 @@ public class PinkiCenter {
     double wiegthAverage = getMadOfWeigthAverage(table);
     return Math.min(averageMad, wiegthAverage);
   }
-
-  /**
-   * Function which generates table of weeks (sunday till sunday)
-   * with days of transactions, total for each week, and total for each 4 months
-   * @param transactions
-   * @return
-   */
-  public List<Double[]> generateWeeksTable(List<Transaction> transactions, int numberOfWeeksInCicle) {
-
-    List<Double[]> weeks = new LinkedList<>();
-
-    int weekNumber = 0;
-    int startDayOfWeek = 0;
-    TransactionDate startDate;
-
-    double totalWeek = 0;
-    double total4Weeks = 0;
-
-    Transaction firstTransaction = transactions.get(0);
-    startDayOfWeek = DateUtils.dayOfWeek(firstTransaction.getTransactionDate());
-    startDate = firstTransaction.getTransactionDate();
-    Iterator<Transaction> iterator = transactions.iterator();
-    while (iterator.hasNext()) {
-      Transaction transaction = iterator.next();
-      Double[] transactionsForWeek;
-
-      int dayOfWeek = DateUtils.dayOfWeek(transaction.getTransactionDate());
-      int intervalToNextDay = DateUtils.dayBetween(startDate, transaction.getTransactionDate());
-
-      if (startDayOfWeek + intervalToNextDay < WEEK_LAST_INDEX) { // same week
-        transactionsForWeek = getWeek(weeks, weekNumber);
-      } else { // start new week
-        // update total for 4 weeks
-        total4Weeks += totalWeek;
-        // update new start day
-        startDayOfWeek = dayOfWeek;
-        startDate = transaction.getTransactionDate();
-        transactionsForWeek = weeks.get(weekNumber);
-        // update total week
-        transactionsForWeek[WEEK_TOTAL_INDEX] = totalWeek;
-        totalWeek = 0;
-        if ((weekNumber + 1) % numberOfWeeksInCicle == 0) { // Finished 4 weeks
-          // update total of 4 weeks
-          transactionsForWeek[CICLE_TOTAL_INDEX] = total4Weeks;
-          // calculate last column with percentage
-          calculateWeeksPercentage(weeks, weekNumber, total4Weeks, numberOfWeeksInCicle);
-          total4Weeks = 0;
-        }
-
-        // check if needs to add empty weeks
-        intervalToNextDay = intervalToNextDay - (WEEK_LAST_INDEX - startDayOfWeek) - dayOfWeek;
-
-        int numberOfEmtyWeeksToAdd = intervalToNextDay / NUMBER_OF_DAYS_INT_WEEK;
-        if (intervalToNextDay > 0) {
-          addEmptyWeeks(weeks, weekNumber, numberOfEmtyWeeksToAdd);
-        }
-        weekNumber += numberOfEmtyWeeksToAdd + 1;
-        transactionsForWeek = getWeek(weeks, weekNumber);
-      }
-
-      // if amount is not initialized then do so
-      if (transactionsForWeek[dayOfWeek] == null) {
-        transactionsForWeek[dayOfWeek] = DOUBLE_ZERO;
-      }
-      // add amount to day
-      transactionsForWeek[dayOfWeek] += transaction.getAmount();
-      // add amount to total week calculation
-      totalWeek += transaction.getAmount();
-    }
-
-    return weeks;
-
-  }
-
-
-  private void addEmptyWeeks(List<Double[]> weeks, int weekNumber, int numberOfEmptyWeeksToAdd) {
-    int iterateIndex = weekNumber + 1;
-    for (int i = 0; i < numberOfEmptyWeeksToAdd; i++) {
-      weeks.add(iterateIndex, new Double[NUMBER_OF_DAYS_INT_WEEK + 3]);
-    }
-  }
-
-  private Double[] getWeek(List<Double[]> weeks, int weekNumber) {
-    Double[] transactionsForWeek;
-    if (weeks.size() <= weekNumber) {
-      transactionsForWeek = new Double[NUMBER_OF_DAYS_INT_WEEK + 3];
-      weeks.add(weekNumber, transactionsForWeek);
-    } else {
-      transactionsForWeek = weeks.get(weekNumber);
-    }
-    return transactionsForWeek;
-  }
-
-  private void calculateWeeksPercentage(List<Double[]> weeks, int lastWeekIndex,
-                                        double totalForCicle, int numberOfWeeksInCicle) {
-    int iterator = lastWeekIndex;
-    for (int i = 0; i < numberOfWeeksInCicle; i++) {
-      Double[] week = weeks.get(iterator);
-      // check if total for this week exists, other wise it is zero.
-      // later on we will fix this value
-      double weekTotal = (week[WEEK_TOTAL_INDEX] != null) ? week[WEEK_TOTAL_INDEX] : 0;
-      double  percentage = weekTotal / totalForCicle;
-      week[WEEK_TOTAL_PERCENTAGE_INDEX] = NumbersUtils.round(percentage, 2);
-      iterator--;
-    }
-  }
-
-
-
 }
+

@@ -8,6 +8,7 @@ import java.util.Map;
 import com.taru.model.Transaction;
 import com.taru.parsers.DateParser;
 import com.taru.resthandlers.services.TransactionService;
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.taru.model.TransactionDate;
@@ -45,7 +46,10 @@ public class PinkiCenterTest {
 		List<Transaction> groceries = service.getTransactionByMonthAsList("Groceries");
 
 		PinkiCenter center = new PinkiCenter();
-		center.generateWeeksTable(groceries,4);
+		List<Double[]> weeksTable = center.generateWeeksTable(groceries, 4);
+		center.fixAnormalWeeks(weeksTable,4);
+		int res = center.calculateCycleTotalsAndPercentages(weeksTable, 4);
+		Assert.assertEquals(2,res);
 	}
 
 }
