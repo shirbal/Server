@@ -2,28 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76fed5eb-7a45-4fe1-82f3-e9712d4a006f" name="Default" comment="Created logic for finding the days for each week which we will do transactions">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taru/pinki/DaysProjector.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taru/model/enums/Month.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taru/pinki/ValuesProjector.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taru/model/enums/Week.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taru/pinki/WeeklyProjector.java" />
-      <change type="DELETED" beforePath="C:\Users\smaor\Documents\springworkspace\Server\src\main\java\com\taru\model\Month.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\smaor\Documents\springworkspace\Server\target\classes\com\taru\model\Bank.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\smaor\Documents\springworkspace\Server\target\classes\com\taru\model\Month.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\smaor\Documents\springworkspace\Server\target\classes\com\taru\model\TransactionDate$Week.class" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\smaor\Documents\springworkspace\Server\src\main\java\com\taru\model\Bank.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/model/enums/Bank.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/pinki/PinkiCenter.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/pinki/PinkiCenter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/taru/pinki/PinkiCenterTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/taru/pinki/PinkiCenterTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/model/TransactionCategory$1.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/model/TransactionCategory$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/model/TransactionCategory.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/model/TransactionCategory.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/model/TransactionDate.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/model/TransactionDate.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/resthandlers/services/TransactionService.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/resthandlers/services/TransactionService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/utils/DateUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/utils/DateUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/pinki/PinkiCenter.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/pinki/PinkiCenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/taru/pinki/PinkiCenterTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/taru/pinki/PinkiCenterTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/model/TransactionCategory.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/model/TransactionCategory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/model/TransactionDate.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/model/TransactionDate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/resthandlers/services/TransactionService.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/resthandlers/services/TransactionService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Server.iws" />
@@ -105,6 +89,11 @@
     </leaf>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Shiran Maor" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -908,7 +897,7 @@
       <workItem from="1445385553696" duration="5463000" />
       <workItem from="1445482627802" duration="755000" />
       <workItem from="1445564446924" duration="10137000" />
-      <workItem from="1445709585734" duration="47885000" />
+      <workItem from="1445709585734" duration="47950000" />
     </task>
     <task id="LOCAL-00001" summary="Moving jars to lib folder">
       <created>1445395819768</created>
@@ -922,11 +911,17 @@
       <option name="project" value="LOCAL" />
       <updated>1445400092177</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Created logic for finding the days for each week which we will do transactions">
+      <created>1445840166896</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1445840166896</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64240000" />
+    <option name="totallyTimeSpent" value="64305000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1456" height="916" extended-state="6" />
@@ -992,6 +987,9 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
+  </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
@@ -1011,19 +1009,20 @@
     <MESSAGE value="Rearanging the code" />
     <MESSAGE value="Created logic for finding the days for each week which we will do transactions" />
     <option name="LAST_COMMIT_MESSAGE" value="Created logic for finding the days for each week which we will do transactions" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/taru/resthandlers/services/TransactionService.java</url>
-          <line>133</line>
+          <line>132</line>
           <properties />
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/taru/resthandlers/services/TransactionService.java</url>
-          <line>128</line>
+          <line>127</line>
           <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
@@ -1081,10 +1080,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="249" max-vertical-offset="867">
           <caret line="96" column="16" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
           <folding>
-            <element signature="e#778#779#0" expanded="true" />
-            <element signature="e#801#802#0" expanded="true" />
-            <element signature="e#1873#1874#0" expanded="true" />
-            <element signature="e#1904#1905#0" expanded="true" />
+            <element signature="e#777#778#0" expanded="true" />
+            <element signature="e#800#801#0" expanded="true" />
+            <element signature="e#1872#1873#0" expanded="true" />
+            <element signature="e#1903#1904#0" expanded="true" />
             <element signature="method#mapToMonths#0;class#TransactionService#0" expanded="false" />
             <element signature="method#add#0;class#TransactionService#0" expanded="false" />
             <element signature="method#add#1;class#TransactionService#0" expanded="false" />
@@ -1222,10 +1221,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="799">
           <caret line="39" column="47" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
-            <element signature="e#778#779#0" expanded="true" />
-            <element signature="e#801#802#0" expanded="true" />
-            <element signature="e#1873#1874#0" expanded="true" />
-            <element signature="e#1904#1905#0" expanded="true" />
+            <element signature="e#777#778#0" expanded="true" />
+            <element signature="e#800#801#0" expanded="true" />
+            <element signature="e#1872#1873#0" expanded="true" />
+            <element signature="e#1903#1904#0" expanded="true" />
             <element signature="method#mapToMonths#0;class#TransactionService#0" expanded="false" />
             <element signature="method#add#0;class#TransactionService#0" expanded="false" />
             <element signature="method#add#1;class#TransactionService#0" expanded="false" />
@@ -1261,10 +1260,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#778#779#0" expanded="true" />
-            <element signature="e#801#802#0" expanded="true" />
-            <element signature="e#1873#1874#0" expanded="true" />
-            <element signature="e#1904#1905#0" expanded="true" />
+            <element signature="e#777#778#0" expanded="true" />
+            <element signature="e#800#801#0" expanded="true" />
+            <element signature="e#1872#1873#0" expanded="true" />
+            <element signature="e#1903#1904#0" expanded="true" />
             <element signature="method#mapToMonths#0;class#TransactionService#0" expanded="false" />
             <element signature="method#add#0;class#TransactionService#0" expanded="false" />
             <element signature="method#add#1;class#TransactionService#0" expanded="false" />
@@ -1367,10 +1366,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="1462">
           <caret line="40" column="35" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <element signature="e#778#779#0" expanded="true" />
-            <element signature="e#801#802#0" expanded="true" />
-            <element signature="e#1873#1874#0" expanded="true" />
-            <element signature="e#1904#1905#0" expanded="true" />
+            <element signature="e#777#778#0" expanded="true" />
+            <element signature="e#800#801#0" expanded="true" />
+            <element signature="e#1872#1873#0" expanded="true" />
+            <element signature="e#1903#1904#0" expanded="true" />
             <element signature="method#mapToMonths#0;class#TransactionService#0" expanded="false" />
             <element signature="method#add#0;class#TransactionService#0" expanded="false" />
             <element signature="method#add#1;class#TransactionService#0" expanded="false" />
