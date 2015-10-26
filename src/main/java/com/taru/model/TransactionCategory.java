@@ -1,6 +1,7 @@
 package com.taru.model;
 
 import com.taru.brain.CategoryMapper;
+import com.taru.model.enums.Bank;
 import com.taru.parsers.CategoryParser;
 
 public class TransactionCategory {
@@ -20,6 +21,10 @@ public class TransactionCategory {
 
 	}
 
+	public TransactionCategory(String categoryName) {
+		parseCategory(categoryName);
+	}
+
 	private void parseCategoryGeneral(String categoryName) {
 		categoryName = categoryName.toLowerCase();
 		if (categoryName.contains("ATM".toLowerCase()) || categoryName.contains("WITHDRWL".toLowerCase())) {
@@ -36,11 +41,6 @@ public class TransactionCategory {
 		}
 
 	}
-
-	public TransactionCategory(String categoryName) {
-		parseCategory(categoryName);
-	}
-
 
 	private void parseCategory(String category) {
 		if (category.contains("VISA DEBIT") || category.contains("CHECKCARD")) {

@@ -3,7 +3,6 @@ package com.taru.pinki;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import com.taru.model.Transaction;
 import com.taru.parsers.DateParser;
@@ -29,7 +28,7 @@ public class PinkiCenterTest {
 		add(list, "01-JUL-2015", 1911);
 		add(list, "01-AUG-2015", 1113);
 		
-		service.getProjected(list,2);
+		//service.getProjected(list,2);
 		
 	
 	}
@@ -46,10 +45,8 @@ public class PinkiCenterTest {
 		List<Transaction> groceries = service.getTransactionByMonthAsList("Groceries");
 
 		PinkiCenter center = new PinkiCenter();
-		List<Double[]> weeksTable = center.generateWeeksTable(groceries, 4);
-		center.fixAnormalWeeks(weeksTable,4);
-		int res = center.calculateCycleTotalsAndPercentages(weeksTable, 4);
-		Assert.assertEquals(2,res);
+		center.createWeeklyProjected(groceries,4,2);
+
 	}
 
 }

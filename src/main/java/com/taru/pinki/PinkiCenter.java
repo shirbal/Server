@@ -16,44 +16,38 @@ public class PinkiCenter {
   public static final int CYCLE_TOTAL_INDEX = 8;
   public static final int WEEK_TOTAL_PERCENTAGE_INDEX = 9;
   public static final int WEEK_LAST_INDEX = 6;
+  public static final int NO_MORE_DAYS_MARK = 7;
 
-  public double getProjected(List<Pair<TransactionDate, Double>> values, int cleaningParam) {
-    double res = 0;
-    // Convert monthly total to per day each month amount
-    List<Double> perDay = createListPerMonthlyDays(values);
-    // Clean list from irregular values
-    removeSDFromList(perDay, cleaningParam);
-    // get the forecast value
-    res = getForecastValue(perDay);
-    return res;
-  }
 
   /**
-   * @param perDay
+   * @param transactions
+   * @param numberOfWeeksInCycle
+   * @param sdFactor
    * @return
    */
-  public double getForecastValue(List<Double> perDay) {
-    double res;
-    // create table for projection
-    double[][] table = createAvrageTable(perDay);
-    // Calculate projected value
-    //res = getMinMad(table);
-    res = getAvaregeUsingWeigth(table);
-    return res;
-  }
+  public List<Pair<Integer, Double>> createWeeklyProjected(List<Transaction> transactions, int numberOfWeeksInCycle, int sdFactor) {
 
-  public void createWeeklyProjected(List<Transaction> transactions, int numberOfWeeksInCycle) {
+    List<Pair<Integer, Double>> result = new LinkedList<>();
+    // calculate projected
+    double totalProjected = ValuesProjector.getProjected(transactions, sdFactor);
     // Fill table with transactions and weekly totals
-    List<Double[]> weeksTable = generateWeeksTable(transactions, numberOfWeeksInCycle);
+    List<Double[]> weeksTable = generateWeeksTable(transactions);
     // Fix weekly totals which are out of range
-    fixAnormalWeeks(weeksTable, numberOfWeeksInCycle);
+    fixAbnormalWeeks(weeksTable);
     // Calculate cycle totals and weekly percentage per cycle
     int startIndex = calculateCycleTotalsAndPercentages(weeksTable, numberOfWeeksInCycle);
-
     // create weekly percentage table
-
+    double[] weeklyPercentage = WeeklyProjector.createWeeklyPercentage(weeksTable, numberOfWeeksInCycle, startIndex);
     // calculate projected weeks (how much to produce) with percentage
-
+    double[] calculateWeeklyProjected = WeeklyProjector.calculateWeeklyProjected(weeklyPercentage, numberOfWeeksInCycle, totalProjected);
+    // create dates distribution
+    List<Integer>[] daysDistribution = DaysProjector.createDaysDistribution(weeksTable, startIndex, numberOfWeeksInCycle);
+    // create days projected
+    List<Integer>[] projectedAmountsPerDay =
+        DaysProjector.createProjectedAmountsPerDay(weeksTable, daysDistribution, calculateWeeklyProjected, startIndex);
+    // fill result with data
+    //TODO: compete this
+    return result;
   }
 
   /**
@@ -63,7 +57,7 @@ public class PinkiCenter {
    * @param transactions
    * @return
    */
-  public List<Double[]> generateWeeksTable(List<Transaction> transactions, int numberOfWeeksInCicle) {
+  private List<Double[]> generateWeeksTable(List<Transaction> transactions) {
 
     List<Double[]> weeks = new LinkedList<>();
 
@@ -126,7 +120,7 @@ public class PinkiCenter {
 
   }
 
-  public int calculateCycleTotalsAndPercentages(List<Double[]> weeks, int numberOfWeeksInCycle) {
+  private int calculateCycleTotalsAndPercentages(List<Double[]> weeks, int numberOfWeeksInCycle) {
     int firstIndex = 0;
     boolean stop = false;
 
@@ -165,36 +159,27 @@ public class PinkiCenter {
     return firstIndex;
   }
 
-  public void fixAnormalWeeks(List<Double[]> weeks, int numberOfWeeksInCycle) {
-    for (int i = 0; i < numberOfWeeksInCycle; i++) {
-      List<Double> values = getWeekiValues(weeks, i, numberOfWeeksInCycle);
-      double mean = NumbersUtils.mean(values);
-      double sd = NumbersUtils.SD(values, mean);
-      int j = i;
-      Iterator<Double> iterator = values.iterator();
-      while (iterator.hasNext()) {
-        Double next = iterator.next();
-        Double[] transactions = weeks.get(j);
-        if (next > (mean + 2 * sd)) {
-          transactions[WEEK_TOTAL_INDEX] = mean + 2 * sd;
-        } else if (next < (mean - 2 * sd)) {
-          transactions[WEEK_TOTAL_INDEX] = mean - 2 * sd;
-        }
-        j += 4;
+  private void fixAbnormalWeeks(List<Double[]> weeks) {
+    List<Double> values = getWeekiValues(weeks);
+    double mean = NumbersUtils.mean(values);
+    double sd = NumbersUtils.SD(values, mean);
+    Iterator<Double[]> iterator = weeks.iterator();
+    while (iterator.hasNext()) {
+      Double[] transactions = iterator.next();
+      if (transactions[WEEK_TOTAL_INDEX] > (mean + 2 * sd)) {
+        transactions[WEEK_TOTAL_INDEX] = mean + 2 * sd;
+      } else if (transactions[WEEK_TOTAL_INDEX] < (mean - 2 * sd)) {
+        transactions[WEEK_TOTAL_INDEX] = mean - 2 * sd;
       }
     }
   }
 
-  private List<Double> getWeekiValues(List<Double[]> weeks, int startIndex, int numberOfWeeksInCycle) {
+  private List<Double> getWeekiValues(List<Double[]> weeks) {
     List<Double> result = new LinkedList<>();
-    try {
-      while (startIndex < weeks.size()) {
-        Double[] week = weeks.get(startIndex);
-        result.add(week[WEEK_TOTAL_INDEX]);
-        startIndex += numberOfWeeksInCycle;
-      }
-    } catch (Exception e) {
-      e.printStackTrace();
+    Iterator<Double[]> iterator = weeks.iterator();
+    while (iterator.hasNext()) {
+      Double[] next = iterator.next();
+      result.add(next[WEEK_TOTAL_INDEX]);
     }
     return result;
   }
@@ -217,89 +202,5 @@ public class PinkiCenter {
     return transactionsForWeek;
   }
 
-  private double getAvaregeUsingWeigth(double[][] table) {
-    return table[table.length - 1][2];
-  }
-
-  private List<Double> createListPerMonthlyDays(List<Pair<TransactionDate, Double>> values) {
-    List<Double> perDay = new LinkedList<>();
-    Iterator<Pair<TransactionDate, Double>> iter = values.iterator();
-    while (iter.hasNext()) {
-      Pair<TransactionDate, Double> pair = iter.next();
-      int month = pair.getFirst().getMonth();
-      int year = pair.getFirst().getYear();
-      int daysPerMonth = DateUtils.getNumberOfDays(month, year);
-      double amountPerDay = pair.getSecond() / daysPerMonth;
-      amountPerDay = NumbersUtils.round(amountPerDay, 2);
-      perDay.add(amountPerDay);
-
-    }
-
-    return perDay;
-
-  }
-
-  private void removeSDFromList(List<Double> values, int count) {
-    double mean = NumbersUtils.mean(values);
-    double sd = NumbersUtils.SD(values, mean);
-    sd = NumbersUtils.round(sd, 1);
-    Iterator<Double> iter = values.iterator();
-    while (iter.hasNext()) {
-      Double val = iter.next();
-
-      if ((val > (mean + count * sd)) || (val < (mean - count * sd))) {
-        iter.remove();
-      }
-    }
-  }
-
-  private double[][] createAvrageTable(List<Double> months) {
-    if (months == null || months.size() < 4) {
-      return null;
-    }
-
-    double res[][] = new double[months.size() + 1][4];
-
-    // Fill basic
-    for (int i = 0; i < months.size(); i++) {
-      res[i][0] = months.get(i);
-    }
-
-    for (int i = 3; i < months.size() + 1; i++) {
-      res[i][1] = (res[i - 1][0] + res[i - 2][0] + res[i - 3][0]) / 3;
-      res[i][2] = (0.2 * res[i - 3][0]) + (0.3 * res[i - 2][0]) + (0.5 * res[i - 1][0]);
-    }
-
-    return res;
-  }
-
-  private double getMadOfAverage(double[][] arr) {
-    return getMad(arr, 1);
-  }
-
-  private double getMadOfWeigthAverage(double[][] arr) {
-    return getMad(arr, 2);
-  }
-
-  private double getMad(double[][] arr, int index) {
-
-    double sumDeviation = 0;
-    int j = 3;
-    for (int i = 0; i < 3; i++) {
-      double deviation = arr[j][0] - arr[j][index];
-      deviation = NumbersUtils.round(deviation, 2);
-      double absDeviation = Math.abs(deviation);
-      sumDeviation += absDeviation;
-      j++;
-    }
-    return sumDeviation / 3;
-
-  }
-
-  private double getMinMad(double[][] table) {
-    double averageMad = getMadOfAverage(table);
-    double wiegthAverage = getMadOfWeigthAverage(table);
-    return Math.min(averageMad, wiegthAverage);
-  }
 }
 

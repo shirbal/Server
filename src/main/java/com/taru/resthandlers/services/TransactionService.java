@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.TreeMap;
 
 import com.taru.io.DataReader;
-import com.taru.model.Bank;
+import com.taru.model.enums.Bank;
 import com.taru.model.Transaction;
 import com.taru.model.TransactionCategory;
 import com.taru.model.TransactionDate;
@@ -19,9 +19,8 @@ import com.taru.parsers.DateParser;
 
 public class TransactionService {
 
-	private Map<String, Map<String, List<Transaction>>> _categoryToMonths;
-
 	private static TransactionService _instance = new TransactionService();
+	private Map<String, Map<String, List<Transaction>>> _categoryToMonths;
 
 	private TransactionService() {
 		init();

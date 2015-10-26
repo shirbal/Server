@@ -1,7 +1,7 @@
 package com.taru.utils;
 
-import com.taru.model.Month;
 import com.taru.model.TransactionDate;
+import com.taru.model.enums.Month;
 
 import java.util.Calendar;
 
@@ -73,10 +73,10 @@ public class DateUtils {
 
 		} else { // not same year
 			result += getNumOfDaysTillEndOfMonth(day1,month1,year1) + 1;
-			if (month1 < Month.DECEMBER) {
+			if (month1 < Month.DECEMBER.get()) {
 				result += getNumOfDaysTillEndOfYear(month1+1,year1);
 			}
-			if (month2 > Month.JANUARY) {
+			if (month2 > Month.JANUARY.get()) {
 				result += getNumberOfDaysFromStartYearTillMonth(month2,year2);
 			}
 			result += day2 - 1;
@@ -95,10 +95,10 @@ public class DateUtils {
 	 */
 	public static int getNumberOfDaysFromStartYearTillMonth(int month, int year) {
 		int result ;
-		if (month > Month.JANUARY) {
-			result = getNumOfDaysBetweenMonths(Month.JANUARY, month, year);
+		if (month > Month.JANUARY.get()) {
+			result = getNumOfDaysBetweenMonths(Month.JANUARY.get(), month, year);
 		} else {
-			result = getNumberOfDays(Month.JANUARY,year);
+			result = getNumberOfDays(Month.JANUARY.get(),year);
 		}
 		return result;
 	}
@@ -110,8 +110,8 @@ public class DateUtils {
 	 * @return
 	 */
 	public static int getNumOfDaysTillEndOfYear(int month, int year) {
-		int result = getNumOfDaysBetweenMonths(month, Month.DECEMBER, year);
-		result += getNumberOfDays(Month.DECEMBER,2015);
+		int result = getNumOfDaysBetweenMonths(month, Month.DECEMBER.get(), year);
+		result += getNumberOfDays(Month.DECEMBER.get(),2015);
 		return result;
 	}
 

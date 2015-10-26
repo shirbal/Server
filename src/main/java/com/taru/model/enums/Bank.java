@@ -1,4 +1,4 @@
-package com.taru.model;
+package com.taru.model.enums;
 
 /**
  * Created by Shiran Maor on 10/22/2015.

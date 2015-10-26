@@ -1,11 +1,12 @@
 package com.taru.model;
 
+import com.taru.model.enums.Week;
+
 import java.util.Comparator;
 import java.util.Date;
 
 public class TransactionDate implements Comparator<TransactionDate>{
 	
-	private enum Week {SUN, MON , TUE, WED, THU, FRI,SAT }
 	private String _date;
 	private String debug;
 
