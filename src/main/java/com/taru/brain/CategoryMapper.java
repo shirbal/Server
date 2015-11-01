@@ -1,5 +1,7 @@
 package com.taru.brain;
 
+import com.taru.model.enums.CategoryLogic;
+
 import java.util.*;
 
 /**
@@ -7,6 +9,7 @@ import java.util.*;
  */
 public class CategoryMapper {
   private static Map<String,String> _known = new HashMap<>();
+  private static Map<String,CategoryLogic> _Logic = new HashMap<>();
 
   static {
     _known.put("DUNKIN", "Food");
@@ -114,6 +117,7 @@ public class CategoryMapper {
     _known.put("YELLOW CAB", "Transportation");
     _known.put("taxi", "Transportation");
     _known.put("dmv", "Transportation");
+    _known.put(" EXXON", "Transportation");
 
     _known.put("EL AL AIR", "Flights");
     _known.put("DELTA AIR", "Flights");
@@ -128,11 +132,11 @@ public class CategoryMapper {
 
 
 
-    _known.put("AT&T", "Internet & Cellular");
-    _known.put("CELLULAR", "Internet & Cellular");
-    _known.put("MOBIL", "Internet & Cellular");
-    _known.put("VERIZON", "Internet & Cellular");
-    _known.put("OMNITELECOM", "Internet & Cellular");
+    _known.put("AT&T", "Cellular");
+    //_known.put("CELLULAR", "Cellular");
+
+    _known.put("VERIZON", "Cellular");
+    _known.put("OMNITELECOM", "Cellular");
 
     _known.put("AMAZON", "Shopping");
     _known.put("TARGET", "Shopping");
@@ -150,8 +154,9 @@ public class CategoryMapper {
     _known.put("PEDIATRICS", "Medical");
     _known.put("LAUNDRY", "Laundry");
 
-    _known.put("STATE FARM", "Auto Insurance");
+    //_known.put("STATE FARM", "Auto Insurance");
     _known.put("GEICO", "Auto Insurance");
+    _known.put("PROG GARDEN", "Auto Insurance");
 
     _known.put("CABLE", "Home");
     _known.put("TECHNICAL", "Home");
@@ -162,7 +167,7 @@ public class CategoryMapper {
     _known.put("WATER", "Water");
     _known.put("LOAN", "Loans");
 
-    _known.put("ELECTR", "Electrisity");
+    _known.put("ELECTR", "Electricity");
 
 
 
@@ -182,6 +187,18 @@ public class CategoryMapper {
     _known.put("NAIL", "Beauty");
     _known.put("HAIR", "Beauty");
     _known.put("SUPERCUTS", "Beauty");
+
+    _Logic.put("Food",CategoryLogic.BIG_DISTRIBUTED);
+    _Logic.put("Transportation",CategoryLogic.BIG_DISTRIBUTED);
+    _Logic.put("Groceries",CategoryLogic.BIG_DISTRIBUTED);
+
+    _Logic.put("Electricity",CategoryLogic.PERMANENT);
+    _Logic.put("Loans",CategoryLogic.PERMANENT);
+    _Logic.put("Water",CategoryLogic.PERMANENT);
+    _Logic.put("Credit Card",CategoryLogic.PERMANENT);
+    _Logic.put("Auto Insurance",CategoryLogic.PERMANENT);
+    _Logic.put("Cellular",CategoryLogic.PERMANENT);
+
 
   }
 

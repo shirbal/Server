@@ -28,7 +28,7 @@ public class PinkiCenterTest {
 		add(list, "01-JUL-2015", 1911);
 		add(list, "01-AUG-2015", 1113);
 		
-		//service.getProjected(list,2);
+		//service.getProjectedForDays(list,2);
 		
 	
 	}
@@ -45,7 +45,7 @@ public class PinkiCenterTest {
 		List<Transaction> groceries = service.getTransactionByMonthAsList("Groceries");
 
 		PinkiCenter center = new PinkiCenter();
-		center.createWeeklyProjected(groceries,4,2);
+		center.createWeeklyProjected(groceries,28,4,1.5);
 
 	}
 

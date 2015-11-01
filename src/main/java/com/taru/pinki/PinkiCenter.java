@@ -20,33 +20,57 @@ public class PinkiCenter {
 
 
   /**
+   *
    * @param transactions
+   * @param numberOfDaysProjection
    * @param numberOfWeeksInCycle
    * @param sdFactor
    * @return
    */
-  public List<Pair<Integer, Double>> createWeeklyProjected(List<Transaction> transactions, int numberOfWeeksInCycle, int sdFactor) {
+  public static List<Pair<Integer, Double>>[] createWeeklyProjected(List<Transaction> transactions,int numberOfDaysProjection,
+                                                           int numberOfWeeksInCycle, double sdFactor) {
 
-    List<Pair<Integer, Double>> result = new LinkedList<>();
+    List<Pair<Integer, Double>>[] result = null;
     // calculate projected
-    double totalProjected = ValuesProjector.getProjected(transactions, sdFactor);
+    Map<Pair<Integer, Integer>, Double> monthsTotal = createMonthsTotal(transactions);
+    double totalProjected = ValuesProjector.getProjectedForDays(monthsTotal, numberOfDaysProjection, sdFactor);
     // Fill table with transactions and weekly totals
     List<Double[]> weeksTable = generateWeeksTable(transactions);
     // Fix weekly totals which are out of range
     fixAbnormalWeeks(weeksTable);
     // Calculate cycle totals and weekly percentage per cycle
     int startIndex = calculateCycleTotalsAndPercentages(weeksTable, numberOfWeeksInCycle);
-    // create weekly percentage table
-    double[] weeklyPercentage = WeeklyProjector.createWeeklyPercentage(weeksTable, numberOfWeeksInCycle, startIndex);
     // calculate projected weeks (how much to produce) with percentage
-    double[] calculateWeeklyProjected = WeeklyProjector.calculateWeeklyProjected(weeklyPercentage, numberOfWeeksInCycle, totalProjected);
-    // create dates distribution
-    List<Integer>[] daysDistribution = DaysProjector.createDaysDistribution(weeksTable, startIndex, numberOfWeeksInCycle);
+    double[] calculateWeeklyProjected =
+        WeeklyProjector.calculateWeeklyProjected(weeksTable,totalProjected,startIndex,numberOfWeeksInCycle);
     // create days projected
-    List<Integer>[] projectedAmountsPerDay =
-        DaysProjector.createProjectedAmountsPerDay(weeksTable, daysDistribution, calculateWeeklyProjected, startIndex);
-    // fill result with data
-    //TODO: compete this
+    result =
+        DaysProjector.createProjectedAmountsPerDay(weeksTable, calculateWeeklyProjected, startIndex,numberOfWeeksInCycle);
+    return result;
+  }
+
+  /**
+   *
+   * @param transactions
+   * @return
+   */
+  private static Map<Pair<Integer, Integer>, Double> createMonthsTotal(List<Transaction> transactions) {
+    Map<Pair<Integer, Integer>, Double> result = new HashMap<>();
+    Iterator<Transaction> transactionIterator = transactions.iterator();
+    while(transactionIterator.hasNext()) {
+      Transaction transaction = transactionIterator.next();
+      int month = transaction.getTransactionDate().getMonth();
+      int year = transaction.getTransactionDate().getYear();
+      Pair<Integer, Integer> key = new Pair<>(year, month);
+      Double monthTotal = result.get(key);
+      if(monthTotal == null) {
+        monthTotal = 0.0;
+      }
+      monthTotal += transaction.getAmount();
+      monthTotal = NumbersUtils.round(monthTotal,2);
+      result.put(key,monthTotal);
+    }
+
     return result;
   }
 
@@ -57,7 +81,7 @@ public class PinkiCenter {
    * @param transactions
    * @return
    */
-  private List<Double[]> generateWeeksTable(List<Transaction> transactions) {
+  private static List<Double[]> generateWeeksTable(List<Transaction> transactions) {
 
     List<Double[]> weeks = new LinkedList<>();
 
@@ -120,7 +144,13 @@ public class PinkiCenter {
 
   }
 
-  private int calculateCycleTotalsAndPercentages(List<Double[]> weeks, int numberOfWeeksInCycle) {
+  /**
+   *
+   * @param weeks
+   * @param numberOfWeeksInCycle
+   * @return
+   */
+  private static int calculateCycleTotalsAndPercentages(List<Double[]> weeks, int numberOfWeeksInCycle) {
     int firstIndex = 0;
     boolean stop = false;
 
@@ -133,7 +163,9 @@ public class PinkiCenter {
           break;
         }
         Double[] week = weeks.get(j - i);
-        totalCycle += week[WEEK_TOTAL_INDEX];
+        if (week[WEEK_TOTAL_INDEX] != null) {
+          totalCycle += week[WEEK_TOTAL_INDEX];
+        }
       }
       if (stop) {
         break;
@@ -147,7 +179,9 @@ public class PinkiCenter {
           break;
         }
         Double[] week = weeks.get(j - i);
-        week[WEEK_TOTAL_PERCENTAGE_INDEX] = NumbersUtils.round(week[WEEK_TOTAL_INDEX] / totalCycle, 2);
+        if (week[WEEK_TOTAL_INDEX] != null) {
+          week[WEEK_TOTAL_PERCENTAGE_INDEX] = NumbersUtils.round(week[WEEK_TOTAL_INDEX] / totalCycle, 2);
+        }
       }
       if (stop) {
         break;
@@ -159,39 +193,64 @@ public class PinkiCenter {
     return firstIndex;
   }
 
-  private void fixAbnormalWeeks(List<Double[]> weeks) {
+  /**
+   *
+   * @param weeks
+   */
+  private static void fixAbnormalWeeks(List<Double[]> weeks) {
     List<Double> values = getWeekiValues(weeks);
     double mean = NumbersUtils.mean(values);
     double sd = NumbersUtils.SD(values, mean);
     Iterator<Double[]> iterator = weeks.iterator();
     while (iterator.hasNext()) {
       Double[] transactions = iterator.next();
-      if (transactions[WEEK_TOTAL_INDEX] > (mean + 2 * sd)) {
-        transactions[WEEK_TOTAL_INDEX] = mean + 2 * sd;
-      } else if (transactions[WEEK_TOTAL_INDEX] < (mean - 2 * sd)) {
-        transactions[WEEK_TOTAL_INDEX] = mean - 2 * sd;
+      if (transactions[WEEK_TOTAL_INDEX] != null) {
+        if (transactions[WEEK_TOTAL_INDEX] > (mean + 2 * sd)) {
+          transactions[WEEK_TOTAL_INDEX] = mean + 2 * sd;
+        } else if (transactions[WEEK_TOTAL_INDEX] < (mean - 2 * sd)) {
+          transactions[WEEK_TOTAL_INDEX] = mean - 2 * sd;
+        }
       }
     }
   }
 
-  private List<Double> getWeekiValues(List<Double[]> weeks) {
+  /**
+   *
+   * @param weeks
+   * @return
+   */
+  private static List<Double> getWeekiValues(List<Double[]> weeks) {
     List<Double> result = new LinkedList<>();
     Iterator<Double[]> iterator = weeks.iterator();
     while (iterator.hasNext()) {
       Double[] next = iterator.next();
-      result.add(next[WEEK_TOTAL_INDEX]);
+      if (next[WEEK_TOTAL_INDEX] != null) {
+        result.add(next[WEEK_TOTAL_INDEX]);
+      }
     }
     return result;
   }
 
-  private void addEmptyWeeks(List<Double[]> weeks, int weekNumber, int numberOfEmptyWeeksToAdd) {
+  /**
+   *
+   * @param weeks
+   * @param weekNumber
+   * @param numberOfEmptyWeeksToAdd
+   */
+  private static void addEmptyWeeks(List<Double[]> weeks, int weekNumber, int numberOfEmptyWeeksToAdd) {
     int iterateIndex = weekNumber + 1;
     for (int i = 0; i < numberOfEmptyWeeksToAdd; i++) {
       weeks.add(iterateIndex, new Double[NUMBER_OF_DAYS_INT_WEEK + 3]);
     }
   }
 
-  private Double[] getWeek(List<Double[]> weeks, int weekNumber) {
+  /**
+   *
+   * @param weeks
+   * @param weekNumber
+   * @return
+   */
+  private static Double[] getWeek(List<Double[]> weeks, int weekNumber) {
     Double[] transactionsForWeek;
     if (weeks.size() <= weekNumber) {
       transactionsForWeek = new Double[NUMBER_OF_DAYS_INT_WEEK + 3];

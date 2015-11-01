@@ -1,21 +1,27 @@
 package com.taru.model;
 
-public class Pair<T1, T2> {
+public class Pair<T1, T2> extends Object{
 	
 	private T1 first;
 	private T2 second;
 	
-	public Pair() {}
+	public Pair() {
+	}
 	
 	public Pair(T1 first, T2 second) {
 		this.first = first;
 		this.second = second;
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return first.hashCode() + (31 * second.hashCode());
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		Pair<T1,T2> pair = (Pair<T1,T2>)obj; 
-		return pair.getFirst() == this.getFirst() && pair.getSecond() == this.getSecond();
+		return pair.getFirst().equals(this.getFirst()) && pair.getSecond().equals(this.getSecond());
 	}
 	
 	/**

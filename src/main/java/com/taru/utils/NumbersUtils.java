@@ -44,7 +44,7 @@ public class NumbersUtils {
 	
 	public static double SD(List<Double> values, double mean) {
 		double res = 0;
-		int sum = 0;
+		double sum = 0;
 		for(int i = 0; i<values.size(); i++) {
 			sum += Math.pow((values.get(i) - mean), 2);
 		}

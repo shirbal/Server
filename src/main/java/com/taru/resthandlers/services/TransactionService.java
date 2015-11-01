@@ -39,18 +39,25 @@ public class TransactionService {
 	}
 
 	public List<Transaction> getTransactionByMonthAsList(String category) {
-		Map<String, List<Transaction>> transactionsByMonth = _categoryToMonths.get(category);
 		List<Transaction> transactions = new LinkedList<>();
-		Set<Map.Entry<String, List<Transaction>>> entries = transactionsByMonth.entrySet();
-		Iterator<Map.Entry<String, List<Transaction>>> iterator = entries.iterator();
-		while(iterator.hasNext()) {
-			Map.Entry<String, List<Transaction>> next = iterator.next();
-			List<Transaction> value = next.getValue();
-			Iterator<Transaction> transactionIterator = value.iterator();
-			while(transactionIterator.hasNext()) {
-				Transaction next1 = transactionIterator.next();
-				transactions.add(next1);
-			}
+
+		try {
+			Map<String, List<Transaction>> transactionsByMonth = _categoryToMonths.get(category);
+			if (transactionsByMonth != null) {
+        Set<Map.Entry<String, List<Transaction>>> entries = transactionsByMonth.entrySet();
+        Iterator<Map.Entry<String, List<Transaction>>> iterator = entries.iterator();
+        while(iterator.hasNext()) {
+          Map.Entry<String, List<Transaction>> next = iterator.next();
+          List<Transaction> value = next.getValue();
+          Iterator<Transaction> transactionIterator = value.iterator();
+          while(transactionIterator.hasNext()) {
+            Transaction next1 = transactionIterator.next();
+            transactions.add(next1);
+          }
+        }
+      }
+		} catch (Exception e) {
+			//LOG this
 		}
 		return transactions;
 	}
@@ -70,6 +77,7 @@ public class TransactionService {
 			String[] element = iter.next();
 			if (element != null && element.length == 3) {
 				add(element[0], element[1], element[2], map);//,Bank.BOFA);
+				//add(element[0], element[1], element[2], map,Bank.BOFA);
 			}
 
 		}
@@ -117,7 +125,9 @@ public class TransactionService {
 			TransactionDate date = parseDate(time);
 			double parsedAmount = parseAmount(amount);
 			TransactionCategory categoryParsed = parseCategory(category);
-			addTransactionToList(map, date, parsedAmount, categoryParsed);
+			if (date.getMonth() <=8) {
+				addTransactionToList(map, date, parsedAmount, categoryParsed);
+			}
 		} catch (Exception ex) {
 			System.out.println("Exception bummer");
 		}

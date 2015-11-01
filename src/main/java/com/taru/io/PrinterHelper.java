@@ -1,6 +1,8 @@
 package com.taru.io;
 
+import com.taru.model.Pair;
 import com.taru.model.Transaction;
+import com.taru.model.enums.Week;
 
 import java.util.Iterator;
 import java.util.List;
@@ -100,4 +102,18 @@ public class PrinterHelper {
     }
   }
 
+  public static void printProjected(List<Pair<Integer, Double>>[] weeklyProjected) {
+    for(int i = 0; i < weeklyProjected.length; i++) {
+      System.out.println("Printing for week number " + i);
+      List<Pair<Integer, Double>> days = weeklyProjected[i];
+      if (days != null) {
+        Iterator<Pair<Integer, Double>> iterator = days.iterator();
+        while(iterator.hasNext()) {
+          Pair<Integer, Double> next = iterator.next();
+          Week dayWeek = Week.values()[next.getFirst()];
+          System.out.println("On day " + dayWeek.toString() + " : " + next.getSecond());
+        }
+      }
+    }
+  }
 }

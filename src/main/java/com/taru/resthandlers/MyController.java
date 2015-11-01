@@ -1,9 +1,12 @@
 package com.taru.resthandlers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import com.taru.io.PrinterHelper;
+import com.taru.model.Pair;
+import com.taru.pinki.PinkiCenter;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,6 +35,25 @@ public class MyController {
 	public String getByCategorStr(@PathVariable String categoryName) {
 		Map<String, Map<String, List<Transaction>>> categoryToMonths = service.getCategoryToMonths();
 		return PrinterHelper.printDetailed(categoryName,categoryToMonths,true);
+	}
+
+	@RequestMapping("/weekly/{categoryName}")
+	public List<Pair<Integer, Double>>[] getWeeklyProjects(@PathVariable String categoryName) {
+		List<Transaction> transactions = service.getTransactionByMonthAsList(categoryName);
+		List<Pair<Integer, Double>>[] weeklyProjected = PinkiCenter.createWeeklyProjected(transactions, 28, 4, 2);
+		PrinterHelper.printProjected(weeklyProjected);
+		return weeklyProjected;
+	}
+
+
+	@RequestMapping("/projected}")
+	public List<Pair<Integer, Double>> getProjected() {
+		List<Pair<Integer, Double>> result = new ArrayList<>();
+
+		//TODO: Complete this!
+
+
+		return result;
 	}
 	
 }

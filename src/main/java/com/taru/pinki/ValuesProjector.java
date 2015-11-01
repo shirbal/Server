@@ -1,19 +1,30 @@
 package com.taru.pinki;
 
+import com.taru.model.Pair;
 import com.taru.model.Transaction;
 import com.taru.utils.DateUtils;
 import com.taru.utils.NumbersUtils;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Shiran Maor on 10/25/2015.
  */
 public class ValuesProjector {
 
-  public static double getProjected(List<Transaction> values, int sdFactor) {
+  public static double getProjectedForTransaction(List<Double> values,double sdFactor) {
+    double res = 0;
+    try {
+      removeSDFromList(values, sdFactor);
+      // get the forecast value
+      res = getForecastValue(values);
+    } catch (Exception e) {
+      // LOG this
+    }
+    return res;
+  }
+
+  public static double getProjectedForDays(Map<Pair<Integer, Integer>, Double> values, int numberOfDaysProjection, double sdFactor) {
     double res = 0;
     // Convert monthly total to per day each month amount
     List<Double> perDay = createListPerMonthlyDays(values);
@@ -21,6 +32,7 @@ public class ValuesProjector {
     removeSDFromList(perDay, sdFactor);
     // get the forecast value
     res = getForecastValue(perDay);
+    res = res * numberOfDaysProjection;
     return res;
   }
 
@@ -84,6 +96,7 @@ public class ValuesProjector {
     // Calculate projected value
     //res = getMinMad(table);
     res = getAverageUsingWeight(table);
+    res = NumbersUtils.round(res,2);
     return res;
   }
 
@@ -91,15 +104,22 @@ public class ValuesProjector {
     return table[table.length - 1][2];
   }
 
-  private static List<Double> createListPerMonthlyDays(List<Transaction> values) {
+  /**
+   *
+   * @param values
+   * @return
+   */
+  private static List<Double> createListPerMonthlyDays(Map<Pair<Integer, Integer>, Double> values) {
     List<Double> perDay = new LinkedList<>();
-    Iterator<Transaction> iterator = values.iterator();
+    Set<Map.Entry<Pair<Integer, Integer>, Double>> entries = values.entrySet();
+    Iterator<Map.Entry<Pair<Integer, Integer>, Double>> iterator = entries.iterator();
     while (iterator.hasNext()) {
-      Transaction transaction = iterator.next();
-      int month = transaction.getTransactionDate().getMonth();
-      int year = transaction.getTransactionDate().getYear();
+      Map.Entry<Pair<Integer, Integer>, Double> pairDoubleEntry = iterator.next();
+      Pair<Integer, Integer> yearMonth = pairDoubleEntry.getKey();
+      int year = yearMonth.getFirst();
+      int month = yearMonth.getSecond();
       int daysPerMonth = DateUtils.getNumberOfDays(month, year);
-      double amountPerDay = transaction.getAmount() / daysPerMonth;
+      double amountPerDay = pairDoubleEntry.getValue() / daysPerMonth;
       amountPerDay = NumbersUtils.round(amountPerDay, 2);
       perDay.add(amountPerDay);
 
@@ -109,7 +129,7 @@ public class ValuesProjector {
 
   }
 
-  private static void removeSDFromList(List<Double> values, int sdFactor) {
+  public static void removeSDFromList(List<Double> values, double sdFactor) {
     double mean = NumbersUtils.mean(values);
     double sd = NumbersUtils.SD(values, mean);
     sd = NumbersUtils.round(sd, 1);
@@ -117,7 +137,7 @@ public class ValuesProjector {
     while (iter.hasNext()) {
       Double val = iter.next();
 
-      if ((val > (mean + sdFactor * sd)) || (val < (mean - sdFactor * sd))) {
+      if ((val > (mean + (sdFactor * sd))) || (val < (mean - (sdFactor * sd)))) {
         iter.remove();
       }
     }
