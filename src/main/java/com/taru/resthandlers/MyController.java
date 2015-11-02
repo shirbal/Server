@@ -7,6 +7,7 @@ import java.util.Map;
 import com.taru.io.PrinterHelper;
 import com.taru.model.Pair;
 import com.taru.pinki.PinkiCenter;
+import com.taru.pinki.ProjectorHelper;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,10 +26,18 @@ public class MyController {
         map.remove(null);
         return map;
 	}
+
+	@RequestMapping("/months/{categoryName}")
+	public Map<String, Map<String, List<Transaction>>> getTotalMonths(@PathVariable String categoryName) {
+		Map<String, Map<String, List<Transaction>>> map = service.getAllCategoryBytMonths();
+		PrinterHelper.printTotals(categoryName,map);
+		return map;
+	}
 	
-	@RequestMapping("/categ/{catgoryName}")
+	@RequestMapping("/categ/{categoryName}")
 	public Map<String, List<Transaction>> getByCategor(@PathVariable String categoryName) {
-		return service.getCategoryByMonthByCategoryName(categoryName);
+		Map<String, List<Transaction>> categoryByMonthByCategoryName = service.getCategoryByMonthByCategoryName(categoryName);
+		return categoryByMonthByCategoryName;
 	}
 	
 	@RequestMapping("/catstr/{categoryName}")
@@ -46,14 +55,11 @@ public class MyController {
 	}
 
 
-	@RequestMapping("/projected}")
-	public List<Pair<Integer, Double>> getProjected() {
-		List<Pair<Integer, Double>> result = new ArrayList<>();
-
-		//TODO: Complete this!
-
-
-		return result;
+	@RequestMapping("/projected")
+	public List<Transaction> getProjected() {
+		List<Transaction> projectedTransaction = ProjectorHelper.createProjectedTransaction();
+		PrinterHelper.print(projectedTransaction);
+		return projectedTransaction;
 	}
 	
 }

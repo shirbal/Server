@@ -34,6 +34,8 @@ public class PinkiCenter {
     // calculate projected
     Map<Pair<Integer, Integer>, Double> monthsTotal = createMonthsTotal(transactions);
     double totalProjected = ValuesProjector.getProjectedForDays(monthsTotal, numberOfDaysProjection, sdFactor);
+    System.out.println(totalProjected);
+    System.out.println("--------------------");
     // Fill table with transactions and weekly totals
     List<Double[]> weeksTable = generateWeeksTable(transactions);
     // Fix weekly totals which are out of range
@@ -100,7 +102,7 @@ public class PinkiCenter {
       Double[] transactionsForWeek;
 
       int dayOfWeek = DateUtils.dayOfWeek(transaction.getTransactionDate());
-      int intervalToNextDay = DateUtils.dayBetween(startDate, transaction.getTransactionDate());
+      int intervalToNextDay = DateUtils.daysBetween(startDate, transaction.getTransactionDate());
 
       if (startDayOfWeek + intervalToNextDay < WEEK_LAST_INDEX) { // same week
         transactionsForWeek = getWeek(weeks, weekNumber);

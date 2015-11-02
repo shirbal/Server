@@ -13,7 +13,7 @@ public class Transaction {
 		_transactionCategory = category;
 		_transactionDate = transasction;
 		_amount = amount;
-		fixAmountAndTransactionType();
+		//fixAmountAndTransactionType();
 	}
 
 	private void fixAmountAndTransactionType() {

@@ -2,33 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76fed5eb-7a45-4fe1-82f3-e9712d4a006f" name="Default" comment="Created logic for finding the days for each week which we will do transactions">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taru/model/enums/CategoryLogic.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taru/model/CategoryProperties.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/taru/pinki/DayProjectorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taru/pinki/PermanentProjector.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/taru/pinki/PermanentProjectortest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taru/pinki/ProjectorHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/taru/pinki/ProjectorHelperTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/taru/pinki/ValuesProjectortest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/brain/CategoryMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/brain/CategoryMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/utils/DateUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/utils/DateUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/taru/DateUtilsTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/taru/DateUtilsTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/resthandlers/MyController.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/resthandlers/MyController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/model/Pair.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/model/Pair.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/pinki/PermanentProjector.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/pinki/PermanentProjector.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/taru/pinki/PermanentProjectortest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/taru/pinki/PermanentProjectortest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/pinki/PinkiCenter.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/pinki/PinkiCenter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/taru/pinki/PinkiCenterTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/taru/pinki/PinkiCenterTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/io/PrinterHelper.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/io/PrinterHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/model/Transaction.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/model/Transaction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/model/TransactionCategory.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/model/TransactionCategory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/model/TransactionDate.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/model/TransactionDate.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/resthandlers/services/TransactionService.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/resthandlers/services/TransactionService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/model/enums/Week.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/model/enums/Week.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/brain/CategoryMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/brain/CategoryMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/pinki/DaysProjector.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/pinki/DaysProjector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taru/pinki/ValuesProjector.class" afterPath="$PROJECT_DIR$/target/classes/com/taru/pinki/ValuesProjector.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/utils/DateUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/utils/DateUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/taru/DateUtilsTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/taru/DateUtilsTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/resthandlers/MyController.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/resthandlers/MyController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/utils/NumbersUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/utils/NumbersUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/model/Pair.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/model/Pair.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/pinki/PermanentProjector.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/pinki/PermanentProjector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/taru/pinki/PermanentProjectortest.java" afterPath="$PROJECT_DIR$/src/test/java/com/taru/pinki/PermanentProjectortest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/pinki/PinkiCenter.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/pinki/PinkiCenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/taru/pinki/PinkiCenterTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/taru/pinki/PinkiCenterTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/io/PrinterHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/io/PrinterHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/model/Transaction.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/model/Transaction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/model/TransactionCategory.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/model/TransactionCategory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/model/TransactionDate.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/model/TransactionDate.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/resthandlers/services/TransactionService.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/resthandlers/services/TransactionService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/pinki/ValuesProjector.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/pinki/ValuesProjector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/model/enums/Week.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/model/enums/Week.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taru/pinki/WeeklyProjector.java" afterPath="$PROJECT_DIR$/src/main/java/com/taru/pinki/WeeklyProjector.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Server.iws" />
@@ -55,196 +56,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CategoryMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/brain/CategoryMapper.java">
+      <file leaf-file-name="ProjectorHelper.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/pinki/ProjectorHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2486" max-vertical-offset="3910">
-              <caret line="169" column="37" selection-start-line="169" selection-start-column="37" selection-end-line="169" selection-end-column="37" />
+            <state vertical-scroll-proportion="1.1861702" vertical-offset="32" max-vertical-offset="2091">
+              <caret line="22" column="34" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoryProperties.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/model/CategoryProperties.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-              <caret line="17" column="53" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-              <folding>
-                <element signature="e#260#261#0" expanded="true" />
-                <element signature="e#290#291#0" expanded="true" />
-                <element signature="e#344#345#0" expanded="true" />
-                <element signature="e#382#383#0" expanded="true" />
-                <element signature="e#427#428#0" expanded="true" />
-                <element signature="e#458#459#0" expanded="true" />
-                <element signature="e#521#522#0" expanded="true" />
-                <element signature="e#561#562#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoryLogic.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/model/enums/CategoryLogic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
-              <caret line="5" column="25" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PinkiCenter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/pinki/PinkiCenter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="581" max-vertical-offset="1564">
-              <caret line="25" column="43" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-              <folding>
-                <element signature="docComment;method#createMonthsTotal#0;class#PinkiCenter#0" expanded="false" />
-                <element signature="docComment;method#generateWeeksTable#0;class#PinkiCenter#0" expanded="false" />
-                <element signature="method#generateWeeksTable#0;class#PinkiCenter#0" expanded="false" />
-                <element signature="e#4022#4039#0" expanded="false" />
-                <element signature="docComment;method#calculateCycleTotalsAndPercentages#0;class#PinkiCenter#0" expanded="false" />
-                <element signature="method#calculateCycleTotalsAndPercentages#0;class#PinkiCenter#0" expanded="false" />
-                <element signature="docComment;method#fixAbnormalWeeks#0;class#PinkiCenter#0" expanded="false" />
-                <element signature="method#fixAbnormalWeeks#0;class#PinkiCenter#0" expanded="false" />
-                <element signature="docComment;method#getWeekiValues#0;class#PinkiCenter#0" expanded="false" />
-                <element signature="method#getWeekiValues#0;class#PinkiCenter#0" expanded="false" />
-                <element signature="docComment;method#addEmptyWeeks#0;class#PinkiCenter#0" expanded="false" />
-                <element signature="method#addEmptyWeeks#0;class#PinkiCenter#0" expanded="false" />
-                <element signature="docComment;method#getWeek#0;class#PinkiCenter#0" expanded="false" />
-                <element signature="method#getWeek#0;class#PinkiCenter#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ValuesProjector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/pinki/ValuesProjector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="151" max-vertical-offset="2006">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding>
-                <element signature="docComment;class#ValuesProjector#0" expanded="false" />
-                <element signature="method#getMad#0;class#ValuesProjector#0" expanded="false" />
-                <element signature="method#getMinMad#0;class#ValuesProjector#0" expanded="false" />
-                <element signature="docComment;method#getForecastValue#0;class#ValuesProjector#0" expanded="false" />
-                <element signature="e#2576#2604#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DaysProjector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/pinki/DaysProjector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="851" max-vertical-offset="1530">
-              <caret line="407" column="56" selection-start-line="407" selection-start-column="54" selection-end-line="407" selection-end-column="54" />
-              <folding>
-                <element signature="docComment;class#DaysProjector#0" expanded="false" />
-                <element signature="docComment;method#createProjectedAmountsPerDay#0;class#DaysProjector#0" expanded="false" />
-                <element signature="method#createProjectedAmountsPerDay#0;class#DaysProjector#0" expanded="false" />
-                <element signature="docComment;method#calculateDaysPercents#0;class#DaysProjector#0" expanded="false" />
-                <element signature="method#calculateDaysPercents#0;class#DaysProjector#0" expanded="false" />
-                <element signature="docComment;method#calculatePricePerDay#0;class#DaysProjector#0" expanded="false" />
-                <element signature="method#calculatePricePerDay#0;class#DaysProjector#0" expanded="false" />
-                <element signature="method#calculatePriceForDayI#0;class#DaysProjector#0" expanded="false" />
-                <element signature="method#calculateTotalPercentsForWeekI#0;class#DaysProjector#0" expanded="false" />
-                <element signature="method#calculateWeekIPercentage#0;class#DaysProjector#0" expanded="false" />
-                <element signature="docComment;method#createDaysDistribution#0;class#DaysProjector#0" expanded="false" />
-                <element signature="method#createDaysDistribution#0;class#DaysProjector#0" expanded="false" />
-                <element signature="docComment;method#findNextMostFrequentForWeeksI#0;class#DaysProjector#0" expanded="false" />
-                <element signature="method#findNextMostFrequentForWeeksI#0;class#DaysProjector#0" expanded="false" />
-                <element signature="docComment;method#createFrequencyMapForNextDayForWeeksI#0;class#DaysProjector#0" expanded="false" />
-                <element signature="method#createFrequencyMapForNextDayForWeeksI#0;class#DaysProjector#0" expanded="false" />
-                <element signature="e#10957#10997#0" expanded="false" />
-                <element signature="docComment;method#hadTransactionOnPreviousDay#0;class#DaysProjector#0" expanded="false" />
-                <element signature="method#hadTransactionOnPreviousDay#0;class#DaysProjector#0" expanded="false" />
-                <element signature="docComment;method#populateMapWeekFrequencies#0;class#DaysProjector#0" expanded="false" />
-                <element signature="method#populateMapWeekFrequencies#0;class#DaysProjector#0" expanded="false" />
-                <element signature="docComment;method#addFrequencyToMap#0;class#DaysProjector#0" expanded="false" />
-                <element signature="method#addFrequencyToMap#0;class#DaysProjector#0" expanded="false" />
-                <element signature="docComment;method#mostFrequentDay#0;class#DaysProjector#0" expanded="false" />
-                <element signature="method#mostFrequentDay#0;class#DaysProjector#0" expanded="false" />
-                <element signature="docComment;method#initializeDayDistributionLists#0;class#DaysProjector#0" expanded="false" />
-                <element signature="method#initializeDayDistributionLists#0;class#DaysProjector#0" expanded="false" />
-                <element signature="docComment;method#initializeEmptyLinkedList#0;class#DaysProjector#0" expanded="false" />
-                <element signature="e#16057#16058#0" expanded="true" />
-                <element signature="e#16079#16080#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PermanentProjector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/pinki/PermanentProjector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="185" max-vertical-offset="1343">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PermanentProjectortest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/taru/pinki/PermanentProjectortest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="174" max-vertical-offset="663">
-              <caret line="23" column="32" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PinkiCenterTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/taru/pinki/PinkiCenterTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="278" max-vertical-offset="816">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NumbersUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/utils/NumbersUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="623" max-vertical-offset="986">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/resthandlers/MyController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9870968" vertical-offset="272" max-vertical-offset="799">
-              <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
-              <folding>
-                <element signature="method#getTransactionsByMonths#0;class#MyController#0" expanded="false" />
-                <element signature="method#getByCategor#0;class#MyController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TransactionService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/resthandlers/services/TransactionService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="235" max-vertical-offset="1700">
-              <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
-              <folding>
-                <element signature="method#mapToMonths#0;class#TransactionService#0" expanded="false" />
-                <element signature="method#add#1;class#TransactionService#0" expanded="false" />
-                <element signature="method#addTransactionToList#0;class#TransactionService#0" expanded="false" />
-                <element signature="method#parseCategory#1;class#TransactionService#0" expanded="false" />
+                <element signature="docComment;class#ProjectorHelper#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -266,37 +84,40 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/taru/parsers/CategoryParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taru/parsers/AmountParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taru/model/Transaction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taru/io/DataReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taru/model/Bank.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taru/model/TransactionCategory.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/taru/ReaderHelperTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/taru/TransactionReaderTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/taru/UtilsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taru/parsers/DateParser.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/taru/DateUtilsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taru/model/Month.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taru/model/TransactionDate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taru/model/Week.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taru/model/enums/Month.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taru/utils/DateUtils.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/taru/pinki/PinkiCenterTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taru/model/Pair.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taru/pinki/WeeklyProjector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taru/io/PrinterHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taru/model/enums/Week.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/taru/pinki/DayProjectorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taru/model/enums/CategoryLogic.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taru/model/CategoryProperties.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taru/pinki/PermanentProjector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taru/pinki/PinkiCenter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taru/utils/NumbersUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taru/pinki/ValuesProjector.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taru/pinki/DaysProjector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taru/resthandlers/services/TransactionService.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/taru/pinki/PermanentProjectortest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taru/brain/CategoryMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taru/model/TransactionCategory.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/taru/pinki/ProjectorHelperTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taru/model/Transaction.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/taru/DateUtilsTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/taru/pinki/PermanentProjectortest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taru/io/PrinterHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taru/model/TransactionDate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taru/pinki/PinkiCenter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taru/resthandlers/services/TransactionService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taru/utils/DateUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taru/pinki/ValuesProjector.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taru/resthandlers/MyController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/taru/pinki/ValuesProjectortest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taru/pinki/PermanentProjector.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taru/pinki/ProjectorHelper.java" />
       </list>
     </option>
   </component>
@@ -537,7 +358,195 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="resthandlers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resthandlers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="pinki" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parsers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="enums" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="io" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -608,20 +617,20 @@
       <recent name="com.taru" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PermanentProjectortest.testCreateMonthlyProjected1">
-    <configuration default="false" name="DayProjectorTest.testFindNextMostFrequentForWeeksI1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.ServerApplication">
+    <configuration default="false" name="DateUtilsTest.testCurrentMonth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.taru.pinki.*" />
+          <option name="PATTERN" value="com.taru.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="Server" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.taru.pinki" />
-      <option name="MAIN_CLASS_NAME" value="com.taru.pinki.DayProjectorTest" />
-      <option name="METHOD_NAME" value="testFindNextMostFrequentForWeeksI1" />
+      <option name="PACKAGE_NAME" value="com.taru" />
+      <option name="MAIN_CLASS_NAME" value="com.taru.DateUtilsTest" />
+      <option name="METHOD_NAME" value="testCurrentMonth" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -637,63 +646,7 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="DayProjectorTest.testFindNextMostFrequentForWeeksI2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.taru.pinki.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Server" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.taru.pinki" />
-      <option name="MAIN_CLASS_NAME" value="com.taru.pinki.DayProjectorTest" />
-      <option name="METHOD_NAME" value="testFindNextMostFrequentForWeeksI2" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="DayProjectorTest.testFindNextMostFrequentForWeeksI3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.taru.pinki.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Server" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.taru.pinki" />
-      <option name="MAIN_CLASS_NAME" value="com.taru.pinki.DayProjectorTest" />
-      <option name="METHOD_NAME" value="testFindNextMostFrequentForWeeksI3" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="PermanentProjectortest.testCreateMonthlyProjected" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="PermanentProjectortest.testCreateMonthlyProjected2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.taru.pinki.*" />
@@ -705,7 +658,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.taru.pinki" />
       <option name="MAIN_CLASS_NAME" value="com.taru.pinki.PermanentProjectortest" />
-      <option name="METHOD_NAME" value="testCreateMonthlyProjected" />
+      <option name="METHOD_NAME" value="testCreateMonthlyProjected2" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -722,24 +675,22 @@
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="PermanentProjectortest.testCreateMonthlyProjected1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="DateUtilsTest.testGetPrevious" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.taru.pinki.*" />
+          <option name="PATTERN" value="com.taru.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="Server" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.taru.pinki" />
-      <option name="MAIN_CLASS_NAME" value="com.taru.pinki.PermanentProjectortest" />
-      <option name="METHOD_NAME" value="testCreateMonthlyProjected1" />
+      <option name="PACKAGE_NAME" value="com.taru" />
+      <option name="MAIN_CLASS_NAME" value="com.taru.DateUtilsTest" />
+      <option name="METHOD_NAME" value="testGetPrevious" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -756,9 +707,71 @@
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ProjectorHelperTest.testProjected" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.taru.pinki.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Server" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.taru.pinki" />
+      <option name="MAIN_CLASS_NAME" value="com.taru.pinki.ProjectorHelperTest" />
+      <option name="METHOD_NAME" value="testProjected" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ValuesProjectortest.testProjected" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.taru.pinki.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Server" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.taru.pinki" />
+      <option name="MAIN_CLASS_NAME" value="com.taru.pinki.ValuesProjectortest" />
+      <option name="METHOD_NAME" value="testProjected" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -1034,19 +1047,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Application.ServerApplication" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.DayProjectorTest.testFindNextMostFrequentForWeeksI1" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.DayProjectorTest.testFindNextMostFrequentForWeeksI2" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.DayProjectorTest.testFindNextMostFrequentForWeeksI3" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.PermanentProjectortest.testCreateMonthlyProjected" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.PermanentProjectortest.testCreateMonthlyProjected1" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.DateUtilsTest.testCurrentMonth" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.PermanentProjectortest.testCreateMonthlyProjected2" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.DateUtilsTest.testGetPrevious" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ProjectorHelperTest.testProjected" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.ValuesProjectortest.testProjected" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.PermanentProjectortest.testCreateMonthlyProjected1" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.PermanentProjectortest.testCreateMonthlyProjected" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.DayProjectorTest.testFindNextMostFrequentForWeeksI3" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.DayProjectorTest.testFindNextMostFrequentForWeeksI2" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.DayProjectorTest.testFindNextMostFrequentForWeeksI1" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ValuesProjectortest.testProjected" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ProjectorHelperTest.testProjected" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.PermanentProjectortest.testCreateMonthlyProjected2" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DateUtilsTest.testGetPrevious" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.DateUtilsTest.testCurrentMonth" />
       </list>
     </recent_temporary>
   </component>
@@ -1072,7 +1085,7 @@
       <workItem from="1445912507457" duration="14314000" />
       <workItem from="1446080198706" duration="7812000" />
       <workItem from="1446171022054" duration="4596000" />
-      <workItem from="1446231809646" duration="19663000" />
+      <workItem from="1446231809646" duration="53804000" />
     </task>
     <task id="LOCAL-00001" summary="Moving jars to lib folder">
       <created>1445395819768</created>
@@ -1096,13 +1109,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110963000" />
+    <option name="totallyTimeSpent" value="145104000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0918775" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6947961" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32348806" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1113,10 +1126,10 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947233" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.46694797" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7524613" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22972973" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28120977" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1125,7 +1138,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41068918" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5260197" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1189,41 +1202,107 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/taru/resthandlers/services/TransactionService.java</url>
-          <line>142</line>
+          <line>144</line>
           <properties />
           <option name="timeStamp" value="22" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/taru/resthandlers/services/TransactionService.java</url>
-          <line>137</line>
+          <line>139</line>
           <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/taru/pinki/PinkiCenterTest.java</url>
           <line>47</line>
           <properties />
           <option name="timeStamp" value="53" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/taru/pinki/DayProjectorTest.java</url>
           <line>32</line>
           <properties />
           <option name="timeStamp" value="73" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/taru/resthandlers/MyController.java</url>
-          <line>35</line>
+          <line>44</line>
           <properties />
           <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/taru/DateUtilsTest.java</url>
+          <line>114</line>
+          <properties />
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/taru/utils/DateUtils.java</url>
+          <line>180</line>
+          <properties />
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/taru/DateUtilsTest.java</url>
+          <line>133</line>
+          <properties />
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/taru/pinki/PermanentProjectortest.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/taru/DateUtilsTest.java</url>
+          <line>151</line>
+          <properties />
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/taru/resthandlers/MyController.java</url>
+          <line>38</line>
+          <properties />
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/taru/resthandlers/services/TransactionService.java</url>
+          <line>73</line>
+          <properties />
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/taru/pinki/ProjectorHelper.java</url>
+          <line>35</line>
+          <properties />
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/taru/pinki/ValuesProjectortest.java</url>
+          <line>27</line>
+          <properties />
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/taru/pinki/ProjectorHelper.java</url>
+          <line>67</line>
+          <properties />
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/taru/pinki/PermanentProjector.java</url>
+          <line>77</line>
+          <properties />
+          <option name="timeStamp" value="122" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="88" />
+      <option name="time" value="123" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1232,32 +1311,15 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/parsers/CategoryParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="1054">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/taru/ReaderHelperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/ServerApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="272">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/resthandlers/services/TransactionService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="799">
           <caret line="39" column="47" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#765#766#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#839#840#0" expanded="true" />
             <element signature="method#mapToMonths#0;class#TransactionService#0" expanded="false" />
             <element signature="method#add#1;class#TransactionService#0" expanded="false" />
             <element signature="method#addTransactionToList#0;class#TransactionService#0" expanded="false" />
@@ -1276,7 +1338,7 @@
             <element signature="method#createMonthsTotal#0;class#PinkiCenter#0" expanded="false" />
             <element signature="docComment;method#generateWeeksTable#0;class#PinkiCenter#0" expanded="false" />
             <element signature="method#generateWeeksTable#0;class#PinkiCenter#0" expanded="false" />
-            <element signature="e#4022#4039#0" expanded="false" />
+            <element signature="e#4111#4128#0" expanded="false" />
             <element signature="docComment;method#calculateCycleTotalsAndPercentages#0;class#PinkiCenter#0" expanded="false" />
             <element signature="method#calculateCycleTotalsAndPercentages#0;class#PinkiCenter#0" expanded="false" />
             <element signature="docComment;method#fixAbnormalWeeks#0;class#PinkiCenter#0" expanded="false" />
@@ -1296,6 +1358,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#765#766#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#839#840#0" expanded="true" />
             <element signature="method#mapToMonths#0;class#TransactionService#0" expanded="false" />
             <element signature="method#add#1;class#TransactionService#0" expanded="false" />
             <element signature="method#addTransactionToList#0;class#TransactionService#0" expanded="false" />
@@ -1347,13 +1413,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/model/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="261" max-vertical-offset="816">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/util/GregorianCalendar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59386975" vertical-offset="12678" max-vertical-offset="54961">
@@ -1366,13 +1425,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/util/Calendar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="9384" max-vertical-offset="59517">
-          <caret line="616" column="0" selection-start-line="616" selection-start-column="0" selection-end-line="693" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -1391,41 +1443,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/model/TransactionDate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="833">
-          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-          <folding>
-            <element signature="method#TransactionDate#0;class#TransactionDate#0" expanded="false" />
-            <element signature="method#fromIntToDayString#0;class#TransactionDate#0" expanded="false" />
-            <element signature="method#getDebug#0;class#TransactionDate#0" expanded="false" />
-            <element signature="method#getYear#0;class#TransactionDate#0" expanded="false" />
-            <element signature="method#getMonth#0;class#TransactionDate#0" expanded="false" />
-            <element signature="method#getDay#0;class#TransactionDate#0" expanded="false" />
-            <element signature="method#getDateRepresentation#0;class#TransactionDate#0" expanded="false" />
-            <element signature="method#compare#0;class#TransactionDate#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/utils/DateUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.067226894" vertical-offset="2" max-vertical-offset="1717">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding>
-            <element signature="method#getNumberOfDays#0;class#DateUtils#0" expanded="false" />
-            <element signature="docComment;method#dayInWeek#0;class#DateUtils#0" expanded="false" />
-            <element signature="docComment;method#dayBetween#0;class#DateUtils#0" expanded="false" />
-            <element signature="docComment;method#getNumberOfDaysFromStartYearTillMonth#0;class#DateUtils#0" expanded="false" />
-            <element signature="docComment;method#getNumOfDaysTillEndOfYear#0;class#DateUtils#0" expanded="false" />
-            <element signature="docComment;method#getNumOfDaysBetweenMonths#0;class#DateUtils#0" expanded="false" />
-            <element signature="method#getNumOfDaysBetweenMonths#0;class#DateUtils#0" expanded="false" />
-            <element signature="docComment;method#getNumOfDaysTillEndOfMonth#0;class#DateUtils#0" expanded="false" />
-            <element signature="method#getNumOfDaysTillEndOfMonth#0;class#DateUtils#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/model/enums/Month.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5" vertical-offset="0" max-vertical-offset="476">
@@ -1440,13 +1457,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/model/TransactionCategory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.14624506" vertical-offset="635" max-vertical-offset="1292">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="472">
@@ -1454,57 +1464,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1445">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding>
-            <element signature="docComment;class#Object#0" expanded="false" />
-            <element signature="initializer##0;class#Object#0" expanded="false" />
-            <element signature="docComment;method#getClass#0;class#Object#0" expanded="false" />
-            <element signature="docComment;method#equals#0;class#Object#0" expanded="false" />
-            <element signature="e#5748#5749#0" expanded="false" />
-            <element signature="e#5784#5785#0" expanded="false" />
-            <element signature="docComment;method#clone#0;class#Object#0" expanded="false" />
-            <element signature="docComment;method#toString#0;class#Object#0" expanded="false" />
-            <element signature="docComment;method#notify#0;class#Object#0" expanded="false" />
-            <element signature="docComment;method#notifyAll#0;class#Object#0" expanded="false" />
-            <element signature="docComment;method#wait#0;class#Object#0" expanded="false" />
-            <element signature="docComment;method#wait#1;class#Object#0" expanded="false" />
-            <element signature="method#wait#1;class#Object#0" expanded="false" />
-            <element signature="docComment;method#wait#2;class#Object#0" expanded="false" />
-            <element signature="method#wait#2;class#Object#0" expanded="false" />
-            <element signature="docComment;method#finalize#0;class#Object#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/io/DataReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1143" max-vertical-offset="1819">
-          <caret line="94" column="21" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="13298" max-vertical-offset="23749">
           <caret line="833" column="21" selection-start-line="833" selection-start-column="21" selection-end-line="833" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/model/Pair.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/taru/DateUtilsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6277956" vertical-offset="1" max-vertical-offset="1887">
-          <caret line="65" column="34" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1527,6 +1490,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1086262" vertical-offset="0" max-vertical-offset="626">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1534,20 +1498,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38019168" vertical-offset="0" max-vertical-offset="626">
           <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/pinki/WeeklyProjector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46860644" vertical-offset="0" max-vertical-offset="653">
-          <caret line="38" column="113" selection-start-line="38" selection-start-column="113" selection-end-line="38" selection-end-column="113" />
-          <folding>
-            <element signature="docComment;class#WeeklyProjector#0" expanded="false" />
-            <element signature="docComment;method#calculateWeeklyProjected#0;class#WeeklyProjector#0" expanded="false" />
-            <element signature="method#calculateWeeklyProjected#0;class#WeeklyProjector#0" expanded="false" />
-            <element signature="method#createWeeklyPercentage#0;class#WeeklyProjector#0" expanded="false" />
-            <element signature="docComment;method#getNumberOfWeeksToCompare#0;class#WeeklyProjector#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1598,68 +1549,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6976744" vertical-offset="3248" max-vertical-offset="12155">
-          <caret line="237" column="12" selection-start-line="237" selection-start-column="12" selection-end-line="237" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/io/PrinterHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43737167" vertical-offset="93" max-vertical-offset="1700">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#PrinterHelper#0" expanded="false" />
-            <element signature="method#printCategoriesNames#0;class#PrinterHelper#0" expanded="false" />
-            <element signature="method#printCategoriesSizes#0;class#PrinterHelper#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/pinki/PinkiCenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="581" max-vertical-offset="1564">
-          <caret line="25" column="43" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-          <folding>
-            <element signature="docComment;method#createMonthsTotal#0;class#PinkiCenter#0" expanded="false" />
-            <element signature="docComment;method#generateWeeksTable#0;class#PinkiCenter#0" expanded="false" />
-            <element signature="method#generateWeeksTable#0;class#PinkiCenter#0" expanded="false" />
-            <element signature="e#4022#4039#0" expanded="false" />
-            <element signature="docComment;method#calculateCycleTotalsAndPercentages#0;class#PinkiCenter#0" expanded="false" />
-            <element signature="method#calculateCycleTotalsAndPercentages#0;class#PinkiCenter#0" expanded="false" />
-            <element signature="docComment;method#fixAbnormalWeeks#0;class#PinkiCenter#0" expanded="false" />
-            <element signature="method#fixAbnormalWeeks#0;class#PinkiCenter#0" expanded="false" />
-            <element signature="docComment;method#getWeekiValues#0;class#PinkiCenter#0" expanded="false" />
-            <element signature="method#getWeekiValues#0;class#PinkiCenter#0" expanded="false" />
-            <element signature="docComment;method#addEmptyWeeks#0;class#PinkiCenter#0" expanded="false" />
-            <element signature="method#addEmptyWeeks#0;class#PinkiCenter#0" expanded="false" />
-            <element signature="docComment;method#getWeek#0;class#PinkiCenter#0" expanded="false" />
-            <element signature="method#getWeek#0;class#PinkiCenter#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/utils/NumbersUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="623" max-vertical-offset="986">
           <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/pinki/ValuesProjector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="151" max-vertical-offset="2006">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#ValuesProjector#0" expanded="false" />
-            <element signature="method#getMad#0;class#ValuesProjector#0" expanded="false" />
-            <element signature="method#getMinMad#0;class#ValuesProjector#0" expanded="false" />
-            <element signature="docComment;method#getForecastValue#0;class#ValuesProjector#0" expanded="false" />
-            <element signature="e#2576#2604#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1672,7 +1566,7 @@
             <element signature="docComment;method#createProjectedAmountsPerDay#0;class#DaysProjector#0" expanded="false" />
             <element signature="method#createProjectedAmountsPerDay#0;class#DaysProjector#0" expanded="false" />
             <element signature="docComment;method#calculateDaysPercents#0;class#DaysProjector#0" expanded="false" />
-            <element signature="method#calculateDaysPercents#0;class#DaysProjector#0" expanded="false" />
+            <element signature="method#createProjectedAmountsPerDay#0;class#DaysProjector#0" expanded="false" />
             <element signature="docComment;method#calculatePricePerDay#0;class#DaysProjector#0" expanded="false" />
             <element signature="method#calculatePricePerDay#0;class#DaysProjector#0" expanded="false" />
             <element signature="method#calculatePriceForDayI#0;class#DaysProjector#0" expanded="false" />
@@ -1696,29 +1590,8 @@
             <element signature="docComment;method#initializeDayDistributionLists#0;class#DaysProjector#0" expanded="false" />
             <element signature="method#initializeDayDistributionLists#0;class#DaysProjector#0" expanded="false" />
             <element signature="docComment;method#initializeEmptyLinkedList#0;class#DaysProjector#0" expanded="false" />
-            <element signature="e#16057#16058#0" expanded="true" />
-            <element signature="e#16079#16080#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/taru/pinki/PinkiCenterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="278" max-vertical-offset="816">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/resthandlers/services/TransactionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="235" max-vertical-offset="1700">
-          <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
-          <folding>
-            <element signature="method#mapToMonths#0;class#TransactionService#0" expanded="false" />
-            <element signature="method#add#1;class#TransactionService#0" expanded="false" />
-            <element signature="method#addTransactionToList#0;class#TransactionService#0" expanded="false" />
-            <element signature="method#parseCategory#1;class#TransactionService#0" expanded="false" />
+            <element signature="e#16057#16058#0" expanded="false" />
+            <element signature="e#16079#16080#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1728,63 +1601,334 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
           <caret line="17" column="53" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
           <folding>
-            <element signature="e#260#261#0" expanded="true" />
-            <element signature="e#290#291#0" expanded="true" />
-            <element signature="e#344#345#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
+            <element signature="e#260#261#0" expanded="false" />
+            <element signature="e#290#291#0" expanded="false" />
+            <element signature="e#344#345#0" expanded="false" />
+            <element signature="e#382#383#0" expanded="false" />
+            <element signature="e#427#428#0" expanded="false" />
+            <element signature="e#458#459#0" expanded="false" />
+            <element signature="e#521#522#0" expanded="false" />
+            <element signature="e#561#562#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/model/enums/CategoryLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+        <state vertical-scroll-proportion="0.1734694" vertical-offset="0" max-vertical-offset="490">
           <caret line="5" column="25" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/pinki/PermanentProjector.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/brain/CategoryMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="185" max-vertical-offset="1343">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3047" max-vertical-offset="3910">
+          <caret line="201" column="54" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/model/Pair.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="466" max-vertical-offset="901">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="e#754#755#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/model/TransactionCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="779" max-vertical-offset="1921">
+          <caret line="67" column="26" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/util/Calendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="9389" max-vertical-offset="59517">
+          <caret line="614" column="28" selection-start-line="614" selection-start-column="28" selection-end-line="614" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="718" max-vertical-offset="1445">
+          <caret line="147" column="19" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="19" />
+          <folding>
+            <element signature="docComment;class#Object#0" expanded="false" />
+            <element signature="initializer##0;class#Object#0" expanded="false" />
+            <element signature="docComment;method#getClass#0;class#Object#0" expanded="false" />
+            <element signature="docComment;method#equals#0;class#Object#0" expanded="false" />
+            <element signature="e#5748#5749#0" expanded="false" />
+            <element signature="e#5784#5785#0" expanded="false" />
+            <element signature="docComment;method#clone#0;class#Object#0" expanded="false" />
+            <element signature="docComment;method#toString#0;class#Object#0" expanded="false" />
+            <element signature="docComment;method#notify#0;class#Object#0" expanded="false" />
+            <element signature="docComment;method#notifyAll#0;class#Object#0" expanded="false" />
+            <element signature="docComment;method#wait#0;class#Object#0" expanded="false" />
+            <element signature="docComment;method#wait#1;class#Object#0" expanded="false" />
+            <element signature="method#wait#1;class#Object#0" expanded="false" />
+            <element signature="docComment;method#wait#2;class#Object#0" expanded="false" />
+            <element signature="method#wait#2;class#Object#0" expanded="false" />
+            <element signature="docComment;method#finalize#0;class#Object#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/taru/DateUtilsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2245" max-vertical-offset="2652">
+          <caret line="155" column="24" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/model/TransactionDate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1819">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="28" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#235#267#0" expanded="true" />
+            <element signature="e#710#711#0" expanded="true" />
+            <element signature="e#732#733#0" expanded="true" />
+            <element signature="e#770#771#0" expanded="true" />
+            <element signature="e#797#798#0" expanded="true" />
+            <element signature="e#1378#1410#0" expanded="true" />
+            <element signature="e#2168#2169#0" expanded="true" />
+            <element signature="e#2190#2191#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/io/DataReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="829" max-vertical-offset="1819">
+          <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/model/Transaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+          <folding>
+            <element signature="docComment;class#Transaction#0" expanded="false" />
+            <element signature="method#Transaction#0;class#Transaction#0" expanded="false" />
+            <element signature="method#fixAmountAndTransactionType#0;class#Transaction#0" expanded="false" />
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#1100#1101#0" expanded="true" />
+            <element signature="e#1154#1155#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/taru/pinki/PinkiCenterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
+          <caret line="52" column="40" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/pinki/PinkiCenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="295" max-vertical-offset="2193">
+          <caret line="35" column="61" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
+          <folding>
+            <element signature="docComment;method#createWeeklyProjected#0;class#PinkiCenter#0" expanded="false" />
+            <element signature="docComment;method#createMonthsTotal#0;class#PinkiCenter#0" expanded="false" />
+            <element signature="method#createMonthsTotal#0;class#PinkiCenter#0" expanded="false" />
+            <element signature="docComment;method#generateWeeksTable#0;class#PinkiCenter#0" expanded="false" />
+            <element signature="e#4111#4128#0" expanded="false" />
+            <element signature="docComment;method#calculateCycleTotalsAndPercentages#0;class#PinkiCenter#0" expanded="false" />
+            <element signature="method#calculateCycleTotalsAndPercentages#0;class#PinkiCenter#0" expanded="false" />
+            <element signature="docComment;method#fixAbnormalWeeks#0;class#PinkiCenter#0" expanded="false" />
+            <element signature="method#fixAbnormalWeeks#0;class#PinkiCenter#0" expanded="false" />
+            <element signature="docComment;method#getWeekiValues#0;class#PinkiCenter#0" expanded="false" />
+            <element signature="method#getWeekiValues#0;class#PinkiCenter#0" expanded="false" />
+            <element signature="docComment;method#addEmptyWeeks#0;class#PinkiCenter#0" expanded="false" />
+            <element signature="method#addEmptyWeeks#0;class#PinkiCenter#0" expanded="false" />
+            <element signature="docComment;method#getWeek#0;class#PinkiCenter#0" expanded="false" />
+            <element signature="method#getWeek#0;class#PinkiCenter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/taru/pinki/ProjectorHelperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2977707" vertical-offset="0" max-vertical-offset="628">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/pinki/WeeklyProjector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="3" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#WeeklyProjector#0" expanded="false" />
+            <element signature="docComment;method#calculateWeeklyProjected#0;class#WeeklyProjector#0" expanded="false" />
+            <element signature="docComment;method#getNumberOfWeeksToCompare#0;class#WeeklyProjector#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/resthandlers/services/TransactionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7739837" vertical-offset="816" max-vertical-offset="1785">
+          <caret line="129" column="67" selection-start-line="129" selection-start-column="67" selection-end-line="129" selection-end-column="67" />
+          <folding>
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#765#766#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#839#840#0" expanded="true" />
+            <element signature="method#mapToMonths#0;class#TransactionService#0" expanded="false" />
+            <element signature="method#add#1;class#TransactionService#0" expanded="false" />
+            <element signature="method#addTransactionToList#0;class#TransactionService#0" expanded="false" />
+            <element signature="method#parseCategory#1;class#TransactionService#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/taru/pinki/PermanentProjectortest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="174" max-vertical-offset="663">
-          <caret line="23" column="32" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="21" max-vertical-offset="663">
+          <caret line="35" column="110" selection-start-line="35" selection-start-column="110" selection-end-line="35" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/pinki/ValuesProjector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2074">
+          <caret line="129" column="48" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#ValuesProjector#0" expanded="false" />
+            <element signature="method#getMad#0;class#ValuesProjector#0" expanded="false" />
+            <element signature="method#getMinMad#0;class#ValuesProjector#0" expanded="false" />
+            <element signature="docComment;method#getForecastValue#0;class#ValuesProjector#0" expanded="false" />
+            <element signature="e#2541#2569#0" expanded="false" />
+            <element signature="e#2762#2763#0" expanded="true" />
+            <element signature="e#2805#2806#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/brain/CategoryMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/io/PrinterHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2486" max-vertical-offset="3910">
-          <caret line="169" column="37" selection-start-line="169" selection-start-column="37" selection-end-line="169" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1921">
+          <caret line="71" column="32" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#PrinterHelper#0" expanded="false" />
+            <element signature="method#printCategoriesNames#0;class#PrinterHelper#0" expanded="false" />
+            <element signature="method#printCategoriesSizes#0;class#PrinterHelper#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/resthandlers/MyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9870968" vertical-offset="272" max-vertical-offset="799">
-          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="986">
+          <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/utils/DateUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="356" max-vertical-offset="1853">
+          <caret line="287" column="38" selection-start-line="287" selection-start-column="25" selection-end-line="287" selection-end-column="25" />
           <folding>
-            <element signature="method#getTransactionsByMonths#0;class#MyController#0" expanded="false" />
-            <element signature="method#getByCategor#0;class#MyController#0" expanded="false" />
+            <element signature="docComment;method#dayInWeek#0;class#DateUtils#0" expanded="false" />
+            <element signature="method#dayInWeek#0;class#DateUtils#0" expanded="false" />
+            <element signature="docComment;method#dayOfWeek#0;class#DateUtils#0" expanded="false" />
+            <element signature="method#dayOfWeek#0;class#DateUtils#0" expanded="false" />
+            <element signature="docComment;method#daysBetween#0;class#DateUtils#0" expanded="false" />
+            <element signature="method#daysBetween#0;class#DateUtils#0" expanded="false" />
+            <element signature="docComment;method#getNumberOfDaysFromStartYearTillMonth#0;class#DateUtils#0" expanded="false" />
+            <element signature="method#getNumberOfDaysFromStartYearTillMonth#0;class#DateUtils#0" expanded="false" />
+            <element signature="docComment;method#getNumOfDaysTillEndOfYear#0;class#DateUtils#0" expanded="false" />
+            <element signature="method#getNumOfDaysTillEndOfYear#0;class#DateUtils#0" expanded="false" />
+            <element signature="docComment;method#getNumOfDaysBetweenMonths#0;class#DateUtils#0" expanded="false" />
+            <element signature="method#getNumOfDaysBetweenMonths#0;class#DateUtils#0" expanded="false" />
+            <element signature="docComment;method#getNumOfDaysTillEndOfMonth#0;class#DateUtils#0" expanded="false" />
+            <element signature="method#getNumOfDaysTillEndOfMonth#0;class#DateUtils#0" expanded="false" />
+            <element signature="docComment;method#getNumberOfDaysOfNextMonth#0;class#DateUtils#0" expanded="false" />
+            <element signature="method#getNumberOfDaysOfNextMonth#0;class#DateUtils#0" expanded="false" />
+            <element signature="docComment;method#getDayOfMonth#0;class#DateUtils#0" expanded="false" />
+            <element signature="method#getDayOfMonth#0;class#DateUtils#0" expanded="false" />
+            <element signature="docComment;method#getDayOfWeek#0;class#DateUtils#0" expanded="false" />
+            <element signature="method#getDayOfWeek#0;class#DateUtils#0" expanded="false" />
+            <element signature="docComment;method#getWeekIndex#0;class#DateUtils#0" expanded="false" />
+            <element signature="method#getWeekIndex#0;class#DateUtils#0" expanded="false" />
+            <element signature="docComment;method#getDate#0;class#DateUtils#0" expanded="false" />
+            <element signature="method#getDate#0;class#DateUtils#0" expanded="false" />
+            <element signature="docComment;method#isWeekend#0;class#DateUtils#0" expanded="false" />
+            <element signature="method#isWeekend#0;class#DateUtils#0" expanded="false" />
+            <element signature="docComment;method#firstDayBeforeWeekend#0;class#DateUtils#0" expanded="false" />
+            <element signature="docComment;method#firstDayAfterWeekend#0;class#DateUtils#0" expanded="false" />
+            <element signature="docComment;method#currentMonth#0;class#DateUtils#0" expanded="false" />
+            <element signature="method#currentMonth#0;class#DateUtils#0" expanded="false" />
+            <element signature="method#getPrevious#0;class#DateUtils#0" expanded="false" />
+            <element signature="method#nextDate#0;class#DateUtils#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/taru/pinki/ValuesProjectortest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="629">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/pinki/PermanentProjector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="326" max-vertical-offset="3825">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#PermanentProjector#0" expanded="false" />
+            <element signature="method#isAlreadyUsed#0;class#PermanentProjector#0" expanded="false" />
+            <element signature="method#sameAmount#0;class#PermanentProjector#0" expanded="false" />
+            <element signature="method#lowerLevel#0;class#PermanentProjector#0" expanded="false" />
+            <element signature="method#upperLevel#0;class#PermanentProjector#0" expanded="false" />
+            <element signature="docComment;method#isTransactionFromMonth#0;class#PermanentProjector#0" expanded="false" />
+            <element signature="method#isTransactionFromMonth#0;class#PermanentProjector#0" expanded="false" />
+            <element signature="docComment;method#fromTransactionToAmounts#0;class#PermanentProjector#0" expanded="false" />
+            <element signature="docComment;method#fromTransactionsToDays#0;class#PermanentProjector#0" expanded="false" />
+            <element signature="method#fromTransactionsToDays#0;class#PermanentProjector#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.98357666" vertical-offset="940" max-vertical-offset="12155">
+          <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taru/pinki/ProjectorHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1861702" vertical-offset="32" max-vertical-offset="2091">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding>
+            <element signature="docComment;class#ProjectorHelper#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -30,4 +30,10 @@ public class PermanentProjectortest extends TestCase {
     assertEquals(17, res.intValue());
   }
 
+  @Test
+  public void testCreateMonthlyProjected2() throws Exception {
+    List<Transaction> payrolls = service.getTransactionByMonthAsList("Payroll");
+    List<Pair<Integer, Double>> monthlyProjected = PermanentProjector.createMonthMultiDaysProjected(payrolls,3);
+  }
+
 }

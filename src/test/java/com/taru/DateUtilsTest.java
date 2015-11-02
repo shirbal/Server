@@ -7,12 +7,14 @@ import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Date;
+
 
 public class DateUtilsTest extends TestCase {
 
   @Test
   public void testGetNumberOfDays() throws Exception {
-    int res = DateUtils.getNumberOfDays(10,2015);
+    int res = DateUtils.monthNumberOfDays(10, 2015);
     assertEquals(31,res);
   }
 
@@ -80,7 +82,7 @@ public class DateUtilsTest extends TestCase {
   public void testDayBetween() throws Exception {
     TransactionDate d1 = DateParser.parseTimestamp("24-OCT-2015");
     TransactionDate d2 = DateParser.parseTimestamp("23-OCT-2015");
-    int res = DateUtils.dayBetween(d2, d1);
+    int res = DateUtils.daysBetween(d2, d1);
     assertEquals(1,res);
   }
 
@@ -88,7 +90,7 @@ public class DateUtilsTest extends TestCase {
   public void testDayBetween1() throws Exception {
     TransactionDate d1 = DateParser.parseTimestamp("24-OCT-2015");
     TransactionDate d2 = DateParser.parseTimestamp("1-OCT-2015");
-    int res = DateUtils.dayBetween(d2, d1);
+    int res = DateUtils.daysBetween(d2, d1);
     assertEquals(23,res);
   }
 
@@ -96,7 +98,7 @@ public class DateUtilsTest extends TestCase {
   public void testDayBetween2() throws Exception {
     TransactionDate d1 = DateParser.parseTimestamp("1-OCT-2015");
     TransactionDate d2 = DateParser.parseTimestamp("1-SEP-2015");
-    int res = DateUtils.dayBetween(d2, d1);
+    int res = DateUtils.daysBetween(d2, d1);
     assertEquals(29,res);
   }
 
@@ -104,8 +106,53 @@ public class DateUtilsTest extends TestCase {
   public void testDayBetween3() throws Exception {
     TransactionDate d1 = DateParser.parseTimestamp("24-JAN-2016");
     TransactionDate d2 = DateParser.parseTimestamp("20-DEC-2015");
-    int res = DateUtils.dayBetween(d2, d1);
+    int res = DateUtils.daysBetween(d2, d1);
     assertEquals(35,res);
   }
+
+  @Test
+  public void testGetDayOfMonth() throws Exception {
+    int res = DateUtils.getDayOfMonth(2015, 10, 5, 7);
+    assertEquals(31,res);
+  }
+
+  @Test
+  public void testGetDayOfWeek() throws Exception {
+    int res = DateUtils.getDayOfWeek(2015, 10, 31);
+    assertEquals(7,res);
+  }
+
+
+  @Test
+  public void testGetWeekIndex() throws Exception {
+    int res = DateUtils.getWeekIndex(2015, 10, 31);
+    assertEquals(5,res);
+  }
+
+  @Test
+  public void testIsWeekend() throws Exception {
+    boolean weekend = DateUtils.isWeekend(2015, 10, 31);
+    assertEquals(true,weekend);
+  }
+
+  @Test
+  public void testGetFirstDayBeforeWeekend() throws Exception {
+    int day = DateUtils.firstDayBeforeWeekend(2015, 10, 25);
+    assertEquals(23,day);
+  }
+
+  @Test
+  public void testCurrentMonth() throws Exception {
+    int res = DateUtils.currentMonth();
+    assertEquals(10,res);
+  }
+
+  @Test
+  public void testGetPrevious() throws Exception {
+    java.util.Date date = new Date(2015,10,1);
+    Date previous = DateUtils.getPrevious(new TransactionDate(date), 3);
+  }
+
+
 
 }

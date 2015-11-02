@@ -16,6 +16,7 @@ import com.taru.model.TransactionCategory;
 import com.taru.model.TransactionDate;
 import com.taru.parsers.AmountParser;
 import com.taru.parsers.DateParser;
+import com.taru.pinki.ProjectorHelper;
 
 public class TransactionService {
 
@@ -70,6 +71,7 @@ public class TransactionService {
 		_categoryToMonths = new HashMap<>();
 		List<String[]> res = DataReader.readtFromLeumiAccount("c:\\temp\\transactions.xls");
 		//List<String[]> res = DataReader.readtFromBOFAAccount("c:\\temp\\shiranAccount.xls");
+		//List<String[]> res = DataReader.readtFromBOFAAccount("c:\\temp\\asher_latest.xls");
 		Iterator<String[]> iter = res.iterator();
 		Map<String, List<Transaction>> map = new HashMap<>();
 		while (iter.hasNext()) {
@@ -125,7 +127,7 @@ public class TransactionService {
 			TransactionDate date = parseDate(time);
 			double parsedAmount = parseAmount(amount);
 			TransactionCategory categoryParsed = parseCategory(category);
-			if (date.getMonth() <=8) {
+			if (date.getMonth() <= ProjectorHelper.LAST_MONTH_TO_USE_DATA) {
 				addTransactionToList(map, date, parsedAmount, categoryParsed);
 			}
 		} catch (Exception ex) {

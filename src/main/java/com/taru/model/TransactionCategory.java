@@ -25,6 +25,11 @@ public class TransactionCategory {
 		parseCategory(categoryName);
 	}
 
+	public TransactionCategory(String categoryName, TransactionType type) {
+		_category = categoryName;
+		_transactionType = type;
+	}
+
 	private void parseCategoryGeneral(String categoryName) {
 		categoryName = categoryName.toLowerCase();
 		if (categoryName.contains("ATM".toLowerCase()) || categoryName.contains("WITHDRWL".toLowerCase())) {

@@ -1,7 +1,6 @@
 package com.taru.pinki;
 
 import com.taru.model.Pair;
-import com.taru.model.Transaction;
 import com.taru.utils.DateUtils;
 import com.taru.utils.NumbersUtils;
 
@@ -118,7 +117,7 @@ public class ValuesProjector {
       Pair<Integer, Integer> yearMonth = pairDoubleEntry.getKey();
       int year = yearMonth.getFirst();
       int month = yearMonth.getSecond();
-      int daysPerMonth = DateUtils.getNumberOfDays(month, year);
+      int daysPerMonth = DateUtils.monthNumberOfDays(month, year);
       double amountPerDay = pairDoubleEntry.getValue() / daysPerMonth;
       amountPerDay = NumbersUtils.round(amountPerDay, 2);
       perDay.add(amountPerDay);
@@ -132,13 +131,15 @@ public class ValuesProjector {
   public static void removeSDFromList(List<Double> values, double sdFactor) {
     double mean = NumbersUtils.mean(values);
     double sd = NumbersUtils.SD(values, mean);
-    sd = NumbersUtils.round(sd, 1);
-    Iterator<Double> iter = values.iterator();
-    while (iter.hasNext()) {
-      Double val = iter.next();
+    sd = NumbersUtils.round(sd, 3);
+    if (sd > 0) {
+      Iterator<Double> iter = values.iterator();
+      while (iter.hasNext()) {
+        Double val = iter.next();
 
-      if ((val > (mean + (sdFactor * sd))) || (val < (mean - (sdFactor * sd)))) {
-        iter.remove();
+        if ((val > (mean + (sdFactor * sd))) || (val < (mean - (sdFactor * sd)))) {
+          iter.remove();
+        }
       }
     }
   }
