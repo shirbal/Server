@@ -123,8 +123,8 @@ public class PrinterHelper {
     while(iterator.hasNext()) {
       Transaction next = iterator.next();
       System.out.println(i + ".  " + next.getCategory());
-      System.out.println("Amount: " + next.getAmount());
-      System.out.println("Date: " + next.getTransactionDate().getFullRepresentation());
+      System.out.println("" + next.getAmount());
+      System.out.println("" + next.getTransactionDate().getFullRepresentation());
       System.out.println("-------------------------------");
       i++;
     }

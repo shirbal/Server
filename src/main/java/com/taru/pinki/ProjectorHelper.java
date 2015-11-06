@@ -14,7 +14,7 @@ public class ProjectorHelper {
 
   public static final int MONTH_TO_PROJECT = 9;
   public static final int YEAR_TO_PROJECT = 2015;
-  public static final int LAST_MONTH_TO_USE_DATA = 9;
+  public static final int LAST_MONTH_TO_USE_DATA = 8;
   public static final double SD_TO_USE = 1.5;
 
   public static List<Transaction> createProjectedTransaction() {

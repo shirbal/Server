@@ -49,4 +49,8 @@ public class Transaction {
 		return _transactionDate.getDateRepresentation();
 	}
 
+	public TransactionType getTransactionType() {
+		return _transactionCategory.getTransactionType();
+	}
+
 }
